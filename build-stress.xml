@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GBK" standalone="no"?>
+<project basedir=".\jmeter" default="run" name="stress">
+	<property name="out" value="${basedir}/stress-test-ouput" />
+	<target name="init">
+			<echo>delete jtl file</echo>
+			<delete includeEmptyDirs="true">
+				<fileset dir="${basedir}/stress-test-ouput" includes="**/*" />
+			</delete>
+	</target>	
+	<target name="run_stress" >
+		<taskdef name="jmeter" classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask" />
+		<jmeter jmeterhome="${basedir}/jmeter-2.10" testplan="${basedir}/testplan/artist.jmx" resultlog="${out}/artist.xml">
+			<jvmarg value="-Dgroup1.threads=10" />
+			<property name="jmeter.save.saveservice.output_format" value="xml"/> 
+		</jmeter>
+	<echo message="jmeter search.jmx finished" />
+	</target>
+	<target name="interval" >
+		<echo message="sleep 60 seconds" />
+		<sleep seconds="20" />
+		<echo message="continue" />
+	</target>
+	<target name="make_resport" >
+		<xslt in="${out}/artist.xml" out="${out}/artist.html" style="${basedir}/jmeter-results-report.xsl" />
+	</target>
+	<target name="run" depends="init,run_stress,interval,make_resport" />
+</project>

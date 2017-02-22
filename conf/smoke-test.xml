@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation smoke Test" parallel="tests" thread-count="1" verbose="2"> 
+	<listeners>
+	<listener class-name="com.test.basetest.CustomInvokedMethodListener"></listener>
+	<listener class-name="com.test.basetest.CustomTestListener"></listener>
+	<listener class-name="com.test.basetest.CustomXMLReporter"></listener>
+	</listeners>
+	
+	<test name ="templete test class" prserve-order="true" >
+		<classes>
+	      <class name="com.test.testcase.sample.TestTempleteTestCase"/>   
+	   </classes> 
+	</test >
+	<!-- 
+	<test name ="templete login test" prserve-order="true" >
+		<parameter name="table-name-of-page-element"  value="totalelement"/>
+	  	<parameter name="filename"  value="login.xls"/>
+		<classes>
+	      <class name="com.testcase.ActionFixtureFactory"/>   
+	   </classes> 
+	</test >
+	-->
+	<test name ="test fixture " prserve-order="true" >
+		<parameter name="table-name-of-page-element"  value="totalelement;firstpage"/>
+	  	<parameter name="filename"  value="templete.xls"/>
+		<classes>
+	      <class name="com.test.testcase.ActionFixtureFactory"/>   
+	   </classes> 
+	</test >
+	<!--
+	<test name="test " prserve-order="true">
+		<parameter name="filename"  value="smoke\\testcaseforclass.xls"/>
+		<parameter name="table-name-of-page-element"  value="totalelement"/>
+		<classes>
+			<class name="com.test.testcase.TestSample"/>
+		</classes> 
+	</test>
+ -->
+</suite>
+

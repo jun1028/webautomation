@@ -1,0 +1,800 @@
+-- MySQL dump 10.13  Distrib 5.5.15, for Win32 (x86)
+--
+-- Host: localhost    Database: page
+-- ------------------------------------------------------
+-- Server version	5.5.15
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES gbk */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `allocaterecord`
+--
+
+DROP TABLE IF EXISTS `allocaterecord`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `allocaterecord` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `allocaterecord`
+--
+
+LOCK TABLES `allocaterecord` WRITE;
+/*!40000 ALTER TABLE `allocaterecord` DISABLE KEYS */;
+INSERT INTO `allocaterecord` VALUES (1,NULL,'receiptNo',NULL,NULL,NULL,'txn','调拨单号'),(2,NULL,'outStorehouseId',NULL,NULL,NULL,'txn','调出仓库'),(3,NULL,'inStorehouseId',NULL,NULL,NULL,'txn','调入仓库'),(4,NULL,'editor',NULL,NULL,NULL,'txn','仓库调拨.操作人'),(5,NULL,'addAllocateRecordBtn',NULL,NULL,NULL,'txn','新增仓库调拨'),(6,NULL,'itemDTOs0.deleteRowBtn',NULL,NULL,NULL,'txn','内部退料.删除'),(8,NULL,'returnListBtn',NULL,NULL,NULL,'txn','仓库调拨.返回列表');
+/*!40000 ALTER TABLE `allocaterecord` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `borrow`
+--
+
+DROP TABLE IF EXISTS `borrow`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `borrow` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `borrow`
+--
+
+LOCK TABLES `borrow` WRITE;
+/*!40000 ALTER TABLE `borrow` DISABLE KEYS */;
+INSERT INTO `borrow` VALUES (1,NULL,'receiptNo',NULL,NULL,NULL,'txn','借调单号'),(2,NULL,'borrowerType',NULL,NULL,NULL,'txn','借调类型'),(3,NULL,'inStorehouseId',NULL,NULL,NULL,'txn','调入仓库'),(4,NULL,'borrower',NULL,NULL,NULL,'txn','借调者'),(5,NULL,'returnStatus',NULL,NULL,NULL,'txn','归还状态：'),(6,NULL,'startTimeInput',NULL,NULL,NULL,'txn','借调开始时间'),(7,NULL,'endTimeInput',NULL,NULL,NULL,'txn','借调结束时间'),(8,NULL,'saveBorrowOrder',NULL,NULL,NULL,'txn','确认借调'),(9,NULL,'toBorrowOrderList',NULL,NULL,NULL,'txn','外部借调.返回列表'),(10,NULL,'customer',NULL,NULL,NULL,'txn','新增借调.借调者'),(11,NULL,'addBorrowOrder',NULL,NULL,NULL,'txn','新增借调'),(12,NULL,'itemDTOs0.btnMinus',NULL,NULL,NULL,'txn','外部借调.删除'),(13,NULL,'borrowerDetail',NULL,NULL,NULL,'txn','详细'),(14,NULL,'mobile',NULL,NULL,NULL,'txn','手机号码');
+/*!40000 ALTER TABLE `borrow` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `businessstat`
+--
+
+DROP TABLE IF EXISTS `businessstat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `businessstat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'page.businessStat',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `businessstat`
+--
+
+LOCK TABLES `businessstat` WRITE;
+/*!40000 ALTER TABLE `businessstat` DISABLE KEYS */;
+INSERT INTO `businessstat` VALUES (1,NULL,'first_cont',NULL,NULL,NULL,'page.businessStat','businessStat.营业额'),(2,NULL,'runningStat',NULL,NULL,NULL,'page.businessStat','runningStat.营业流水'),(3,NULL,'selectDay',NULL,NULL,NULL,'page.businessStat','营业统计.日'),(4,NULL,'selectMonth',NULL,NULL,NULL,'page.businessStat','营业统计.月'),(5,NULL,'selectYear',NULL,NULL,NULL,'page.businessStat','营业统计.年'),(6,NULL,'runningStatSum',NULL,NULL,NULL,'page.businessStat','本日收支结余'),(7,NULL,'memberStatSpan',NULL,NULL,NULL,'page.businessStat','会员卡消费'),(8,NULL,'serviceTitle',NULL,NULL,NULL,'page.businessStat','车辆施工'),(9,NULL,'dayRepairStat',NULL,NULL,NULL,'page.businessStat','usinessStat.车辆施工'),(10,NULL,'radDay',NULL,NULL,NULL,'page.businessStat','营业收入统计.按日'),(11,NULL,'radMonth',NULL,NULL,NULL,'page.businessStat','营业收入统计.按月'),(12,NULL,'radYear',NULL,NULL,NULL,'page.businessStat','营业收入统计.按年');
+/*!40000 ALTER TABLE `businessstat` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'customer',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (1,NULL,NULL,NULL,'//a[text()=\'施工首页\']',NULL,'customer','施工首页'),(2,NULL,NULL,NULL,NULL,'span[data-event=\'picking\']','customer','领料'),(3,NULL,NULL,NULL,NULL,'span[data-event=\'construction\']','customer','施工'),(4,NULL,'menu_idinvoice_list_page1',NULL,NULL,NULL,'customer','车辆施工.1'),(5,NULL,'menu_idinvoice_list_page2',NULL,NULL,NULL,'customer','车辆施工.2'),(6,NULL,'nextPageinvoice_list_page',NULL,NULL,NULL,'customer','车辆施工.下一页'),(7,NULL,'lastPagecustomer',NULL,NULL,NULL,'customer','车辆施工.尾页'),(8,NULL,'getPageinvoice_list_page',NULL,NULL,NULL,'customer','车辆施工.第几页'),(9,NULL,'buttoninvoice_list_page',NULL,NULL,NULL,'customer','车辆施工.跳转'),(10,NULL,NULL,NULL,NULL,'a[href*=\'newRepairOrder\']','customer','新增施工单'),(11,NULL,NULL,NULL,NULL,'a[href*=\'getDraftOrderBox\']','customer','草稿箱'),(12,NULL,'licenceNo',NULL,NULL,NULL,'customer','车牌号'),(13,NULL,'startDateStr',NULL,NULL,NULL,'customer','进厂时间'),(14,NULL,'vehicleChassisNo',NULL,NULL,NULL,'customer','车架号'),(15,NULL,'vehicleEngineNo',NULL,NULL,NULL,'customer','发动机号'),(16,NULL,'vehicleColor',NULL,NULL,NULL,'customer','车身颜色'),(17,NULL,'startMileage',NULL,NULL,NULL,'customer','进厂里程'),(18,NULL,'fuelNumber',NULL,NULL,NULL,'customer','剩余油量'),(19,NULL,'byId',NULL,NULL,NULL,'customer','保养时间'),(20,NULL,'maintainMileage',NULL,NULL,NULL,'customer','保养里程'),(21,NULL,'bxId',NULL,NULL,NULL,'customer','保险时间'),(22,NULL,'ycId',NULL,NULL,NULL,'customer','验车时间'),(23,NULL,NULL,NULL,NULL,'input[name=\'appointServiceDTOs[0].appointName\']','customer','服务名称'),(24,NULL,'dp1386917149880',NULL,NULL,NULL,'customer','预约时间'),(25,NULL,'serviceDTOs0.service',NULL,NULL,NULL,'customer','施工内容'),(26,NULL,'serviceDTOs0.standardHours',NULL,NULL,NULL,'customer','标准工时'),(27,NULL,'serviceDTOs0.standardUnitPrice',NULL,NULL,NULL,'customer','工时单价'),(28,NULL,'serviceDTOs0.actualHours',NULL,NULL,NULL,'customer','实际工时'),(29,NULL,'serviceDTOs0.total',NULL,NULL,NULL,'customer','金额'),(30,NULL,'serviceDTOs0.workers',NULL,NULL,NULL,'customer','施工人'),(31,NULL,'serviceDTOs0.businessCategoryName',NULL,NULL,NULL,'customer','营业分类'),(32,NULL,'serviceDTOs0.memo',NULL,NULL,NULL,'customer','备注'),(33,NULL,'serviceDTOs0.deletebutton',NULL,NULL,NULL,'customer','删除'),(34,NULL,'itemDTOs1.plusbutton',NULL,NULL,NULL,'customer','增加'),(35,NULL,'productSaler',NULL,NULL,NULL,'customer','销售人'),(36,NULL,'repairPickingReceiptNo',NULL,NULL,NULL,'customer','领料单号'),(37,NULL,'otherIncomeItemDTOList0.name',NULL,NULL,NULL,'customer','费用名称'),(38,NULL,'otherIncomeItemDTOList0.price',NULL,NULL,NULL,'customer','其他费用.金额'),(39,NULL,'otherIncomeItemDTOList0.otherIncomeCostPriceCheckbox',NULL,NULL,NULL,'customer','是否计入成本'),(40,NULL,'otherIncomeItemDTOList0.memo',NULL,NULL,NULL,'customer','其他费用.备注'),(41,NULL,'otherIncomeItemDTOList0.deletebutton',NULL,NULL,NULL,'customer','其他费用.删除'),(42,NULL,'otherIncomeItemDTOList0.plusbutton',NULL,NULL,NULL,'customer','其他费用.增加'),(43,NULL,'otherTotalSpan',NULL,NULL,NULL,'customer','其他合计'),(44,NULL,'totalSpan',NULL,NULL,NULL,'customer','单据总额'),(45,NULL,'endDateStr',NULL,NULL,NULL,'customer','出厂时间'),(46,NULL,'washBeautyAccountForm',NULL,NULL,NULL,'customer','施工单结算详细对话框'),(47,NULL,'nullifyBtn',NULL,NULL,NULL,'customer','作废'),(48,NULL,'cancelBtn',NULL,NULL,NULL,'customer','清空'),(49,NULL,'saveBtn',NULL,NULL,NULL,'customer','改单'),(50,NULL,'finishBtn',NULL,NULL,NULL,'customer','完工提醒'),(51,NULL,'accountBtn',NULL,NULL,NULL,'customer','交车结算'),(52,NULL,'printBtn',NULL,NULL,NULL,'customer','打印'),(53,NULL,'toInsuranceBtn',NULL,NULL,NULL,'customer','生成保险理赔');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `draft`
+--
+
+DROP TABLE IF EXISTS `draft`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `draft` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `draft`
+--
+
+LOCK TABLES `draft` WRITE;
+/*!40000 ALTER TABLE `draft` DISABLE KEYS */;
+INSERT INTO `draft` VALUES (1,NULL,NULL,NULL,'//a[text()=\'新增销售\']',NULL,'txn','新增销售'),(2,NULL,'allOrderTypesCbox',NULL,NULL,NULL,'txn','单据草稿箱.全选'),(3,NULL,'repairCbox',NULL,NULL,NULL,'txn','单据草稿箱.施工单'),(4,NULL,'inverntoryCbox',NULL,NULL,NULL,'txn','单据草稿箱.入库单'),(5,NULL,'purchaseCbox',NULL,NULL,NULL,'txn','单据草稿箱.采购单'),(6,NULL,'saleCbox',NULL,NULL,NULL,'txn','单据草稿箱.销售单'),(7,NULL,'returnCbox',NULL,NULL,NULL,'txn','单据草稿箱.入库退货单'),(8,NULL,'salesReturnCbox',NULL,NULL,NULL,'txn','单据草稿箱.销售退货单'),(9,NULL,'draftSearchBtn',NULL,NULL,NULL,'txn','单据草稿箱.查询');
+/*!40000 ALTER TABLE `draft` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `firstpage`
+--
+
+DROP TABLE IF EXISTS `firstpage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `firstpage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `KEYVALUE` varchar(45) DEFAULT NULL,
+  `IDVALUE` varchar(45) DEFAULT NULL,
+  `CSSVALUE` varchar(45) DEFAULT NULL,
+  `XPATHVALUE` varchar(45) DEFAULT NULL,
+  `NAMEVALUE` varchar(45) DEFAULT NULL,
+  `DESCVALUE` varchar(45) DEFAULT NULL,
+  `PAGENAME` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `firstpage`
+--
+
+LOCK TABLES `firstpage` WRITE;
+/*!40000 ALTER TABLE `firstpage` DISABLE KEYS */;
+INSERT INTO `firstpage` VALUES (1,'百度输入框','kw',NULL,NULL,NULL,NULL,NULL),(2,'百度提交按钮','su',NULL,NULL,NULL,NULL,NULL),(7,'hello','ddd',NULL,NULL,NULL,NULL,NULL),(9,'jun12','d1',NULL,NULL,NULL,NULL,NULL),(16,'??','dff???? ',NULL,NULL,NULL,NULL,NULL),(17,'入库111111','dff反对反对 ',NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `firstpage` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `goodsreturn`
+--
+
+DROP TABLE IF EXISTS `goodsreturn`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `goodsreturn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `goodsreturn`
+--
+
+LOCK TABLES `goodsreturn` WRITE;
+/*!40000 ALTER TABLE `goodsreturn` DISABLE KEYS */;
+INSERT INTO `goodsreturn` VALUES (1,NULL,NULL,NULL,'//a[text()=\'新增退货\']',NULL,'txn','新增退货'),(2,NULL,'confirmReturnGoodsBtn',NULL,NULL,NULL,'txn','退货'),(4,NULL,NULL,NULL,'//a[text()=\'草稿箱\']',NULL,'txn','草稿箱');
+/*!40000 ALTER TABLE `goodsreturn` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `innerpicking`
+--
+
+DROP TABLE IF EXISTS `innerpicking`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `innerpicking` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `innerpicking`
+--
+
+LOCK TABLES `innerpicking` WRITE;
+/*!40000 ALTER TABLE `innerpicking` DISABLE KEYS */;
+INSERT INTO `innerpicking` VALUES (1,NULL,'repairOrderReceiptNo',NULL,NULL,NULL,'txn','关联施工单号'),(2,NULL,'addNewInnerPicking',NULL,NULL,NULL,'txn','新增内部领料'),(3,NULL,'startTimeStr',NULL,NULL,NULL,'txn','下单时间开始'),(4,NULL,'endTimeStr',NULL,NULL,NULL,'txn','下单时间结束'),(6,NULL,'pickingMan',NULL,NULL,NULL,'txn','退料人');
+/*!40000 ALTER TABLE `innerpicking` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `innerreturn`
+--
+
+DROP TABLE IF EXISTS `innerreturn`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `innerreturn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `innerreturn`
+--
+
+LOCK TABLES `innerreturn` WRITE;
+/*!40000 ALTER TABLE `innerreturn` DISABLE KEYS */;
+INSERT INTO `innerreturn` VALUES (1,NULL,'receiptNo',NULL,NULL,NULL,'txn','退料单号'),(2,NULL,'addNewInnerReturn',NULL,NULL,NULL,'txn','新增内部退料'),(3,NULL,'itemDTOs0.btnMinus',NULL,NULL,NULL,'txn','内部退料.删除'),(4,NULL,'picking_btn',NULL,NULL,NULL,'txn','内部退料.确认'),(5,NULL,'show_innerReturn_list_btn',NULL,NULL,NULL,'txn','内部退料.返回列表'),(6,NULL,'operationMan',NULL,NULL,NULL,'txn','操作人');
+/*!40000 ALTER TABLE `innerreturn` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `inquirycenter`
+--
+
+DROP TABLE IF EXISTS `inquirycenter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `inquirycenter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inquirycenter`
+--
+
+LOCK TABLES `inquirycenter` WRITE;
+/*!40000 ALTER TABLE `inquirycenter` DISABLE KEYS */;
+INSERT INTO `inquirycenter` VALUES (1,NULL,'sysOrderBtn',NULL,NULL,NULL,'txn','系统单据标签'),(2,NULL,'importedOrderBtn',NULL,NULL,NULL,'txn','导入单据标签'),(3,NULL,'receiptNo',NULL,NULL,NULL,'txn','单据号'),(4,NULL,'orderTypeAll',NULL,NULL,NULL,'txn','所有复选框'),(5,NULL,'purchaseLabel',NULL,NULL,NULL,'txn','采购单复选框'),(6,NULL,'inventoryLabel',NULL,NULL,NULL,'txn','入库单复选框'),(7,NULL,'saleLabel',NULL,NULL,NULL,'txn','销售单复选框'),(8,NULL,'repairLabel',NULL,NULL,NULL,'txn','施工单复选框'),(9,NULL,'washLabel',NULL,NULL,NULL,'txn','施工美容单复选框'),(10,NULL,'returnLabel',NULL,NULL,NULL,'txn','入库退货单复选框'),(11,NULL,'saleReturnLabel',NULL,NULL,NULL,'txn','销售退货单复选框'),(12,NULL,'memberLabel',NULL,NULL,NULL,'txn','会员购卡续卡复选框'),(13,NULL,'MEMBER_RETURN_CARD',NULL,NULL,NULL,'txn','会员退卡'),(14,NULL,'customer_supplierInfoText',NULL,NULL,NULL,'txn','供应商/客户'),(15,NULL,'bcgogo-droplist-a6baa5db-e65b-bdf6-86d5-b71b3bc33bd7',NULL,NULL,NULL,'txn','供应商/客户选择框'),(16,NULL,'mobile',NULL,NULL,NULL,'txn','手机'),(17,NULL,NULL,NULL,NULL,'select[name=\'province\']','txn','省份下拉选择单'),(18,NULL,NULL,NULL,NULL,'select[name=\'city\']','txn','城市下拉选择单'),(19,NULL,NULL,NULL,NULL,'select[name=\'region\']','txn','地区下拉选择单'),(20,NULL,'memberCardType',NULL,NULL,NULL,'txn','会员类型'),(21,NULL,'customerMemberNo',NULL,NULL,NULL,'txn','会员卡号'),(22,NULL,'payPerProject',NULL,NULL,NULL,'txn','计次收费项目'),(23,NULL,'vehicleNumber',NULL,NULL,NULL,'txn','车牌号'),(24,NULL,'vehicleBrand',NULL,NULL,NULL,'txn','车辆信息.车辆品牌'),(25,NULL,'vehicleModel',NULL,NULL,NULL,'txn','车辆信息.车型'),(26,NULL,'vehicleColor',NULL,NULL,NULL,'txn','车身颜色'),(27,NULL,'serviceWorker',NULL,NULL,NULL,'txn','施工人'),(28,NULL,'saler',NULL,NULL,NULL,'txn','销售人'),(29,NULL,'operator',NULL,NULL,NULL,'txn','操作人'),(30,NULL,NULL,NULL,NULL,'input[name=\'orderStatusRepeal\']','txn','是否包含作废'),(31,NULL,'cash',NULL,NULL,NULL,'txn','现金复选框'),(32,NULL,'bankCard',NULL,NULL,NULL,'txn','银联复选框'),(33,NULL,'cheque',NULL,NULL,NULL,'txn','支票复选框'),(34,NULL,'deposit',NULL,NULL,NULL,'txn','预付款复选框'),(35,NULL,'memberBalancePay',NULL,NULL,NULL,'txn','会员储值复选框'),(36,NULL,'notPaid',NULL,NULL,NULL,'txn','挂账复选框'),(37,NULL,'statement_account',NULL,NULL,NULL,'txn','对账复选框'),(38,NULL,'coupon',NULL,NULL,NULL,'txn','消费券复选框'),(39,NULL,'couponType',NULL,NULL,NULL,'txn','消费券类型'),(40,NULL,'bcgogo-droplist-a6baa5db-e65b-bdf6-86d5-b71b3bc33bd7',NULL,NULL,NULL,'txn','消费券类型选择框'),(41,NULL,'amountLower',NULL,NULL,NULL,'txn','消费金额下限'),(42,NULL,'amountUpper',NULL,NULL,NULL,'txn','消费金额上限'),(43,NULL,'btnSearch',NULL,NULL,NULL,'txn','搜索'),(44,NULL,'resetSearchCondition',NULL,NULL,NULL,'txn','清空条件'),(45,NULL,'menu_idinquiryCenter1',NULL,NULL,NULL,'txn','查询中心.1'),(46,NULL,'menu_idinquiryCenter2',NULL,NULL,NULL,'txn','查询中心.2'),(47,NULL,'nextPageinquiryCenter',NULL,NULL,NULL,'txn','查询中心.下一页'),(48,NULL,'lastPageinquiryCenter',NULL,NULL,NULL,'txn','查询中心.尾页'),(49,NULL,'getPageinquiryCenter',NULL,NULL,NULL,'txn','查询中心.第几页'),(50,NULL,'buttoninquiryCenter',NULL,NULL,NULL,'txn','查询中心.跳转');
+/*!40000 ALTER TABLE `inquirycenter` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `insurance`
+--
+
+DROP TABLE IF EXISTS `insurance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `insurance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'insurance',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `insurance`
+--
+
+LOCK TABLES `insurance` WRITE;
+/*!40000 ALTER TABLE `insurance` DISABLE KEYS */;
+INSERT INTO `insurance` VALUES (1,NULL,'addNewInsurance',NULL,NULL,NULL,'insurance','新增保险理赔'),(2,NULL,'policyNo',NULL,NULL,NULL,'insurance','保险单号'),(3,NULL,'insuranceCompanyId',NULL,NULL,NULL,'insurance','保险公司'),(4,NULL,'licenceNo',NULL,NULL,NULL,'insurance','车牌号'),(5,NULL,'customer',NULL,NULL,NULL,'insurance','保险人'),(6,NULL,'status',NULL,NULL,NULL,'insurance','保险理赔.状态'),(7,NULL,'cleanCondition',NULL,NULL,NULL,'insurance','保险理赔.清空条件');
+/*!40000 ALTER TABLE `insurance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `inventorycheck`
+--
+
+DROP TABLE IF EXISTS `inventorycheck`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `inventorycheck` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inventorycheck`
+--
+
+LOCK TABLES `inventorycheck` WRITE;
+/*!40000 ALTER TABLE `inventorycheck` DISABLE KEYS */;
+INSERT INTO `inventorycheck` VALUES (1,NULL,'checkResultSelect',NULL,NULL,NULL,'txn','库存盘点.盘盈盘亏'),(2,NULL,'editor',NULL,NULL,NULL,'txn','库存盘点.操作人'),(3,NULL,'menu_iddynamical11',NULL,NULL,NULL,'txn','库存盘点.1'),(4,NULL,'menu_iddynamical12',NULL,NULL,NULL,'txn','库存盘点.2'),(5,NULL,'menu_iddynamical13',NULL,NULL,NULL,'txn','库存盘点.3'),(6,NULL,'nextPagedynamical1',NULL,NULL,NULL,'txn','库存盘点.下一页'),(7,NULL,'lastPagedynamical1',NULL,NULL,NULL,'txn','库存盘点.尾页'),(8,NULL,'getPagedynamical1',NULL,NULL,NULL,'txn','库存盘点.页'),(9,NULL,'buttondynamical1',NULL,NULL,NULL,'txn','库存盘点.跳转'),(10,NULL,'addNewInventoryCheck',NULL,NULL,NULL,'txn','库存盘点.新增盘点'),(11,NULL,'inventoryCheckTime',NULL,NULL,NULL,'txn','新增盘点.盘点日期'),(12,NULL,'saveBtn',NULL,NULL,NULL,'txn','新增盘点.确认盘点'),(13,NULL,'backBtn',NULL,NULL,NULL,'txn','新增盘点.返回列表');
+/*!40000 ALTER TABLE `inventorycheck` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `itemstat`
+--
+
+DROP TABLE IF EXISTS `itemstat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `itemstat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'page.itemStat',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `itemstat`
+--
+
+LOCK TABLES `itemstat` WRITE;
+/*!40000 ALTER TABLE `itemstat` DISABLE KEYS */;
+INSERT INTO `itemstat` VALUES (7,NULL,'a[MENU-NAME*=\'ITEM_STAT_CUSTOMER_STAT\']',NULL,NULL,NULL,'page.itemStat','客户交易标签'),(8,NULL,'orderTotal',NULL,NULL,NULL,'page.itemStat','累计交易总计'),(9,NULL,'settledTotal',NULL,NULL,NULL,'page.itemStat','实收'),(10,NULL,'debtTotal',NULL,NULL,NULL,'page.itemStat','挂账'),(11,NULL,'discountTotal',NULL,NULL,NULL,'page.itemStat','优惠总计'),(12,NULL,'costTotal',NULL,NULL,NULL,'page.itemStat','成本总计'),(13,NULL,'grossProfitTotal',NULL,NULL,NULL,'page.itemStat','毛利总计'),(14,NULL,'grossProfitPercent',NULL,NULL,NULL,'page.itemStat','毛利率'),(15,NULL,'customerName',NULL,NULL,NULL,'page.itemStat','客户名');
+/*!40000 ALTER TABLE `itemstat` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productthrough`
+--
+
+DROP TABLE IF EXISTS `productthrough`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `productthrough` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productthrough`
+--
+
+LOCK TABLES `productthrough` WRITE;
+/*!40000 ALTER TABLE `productthrough` DISABLE KEYS */;
+INSERT INTO `productthrough` VALUES (1,NULL,'allStoreHouseCheck',NULL,NULL,NULL,'txn','全部仓库'),(2,NULL,'J_storehouseCheck',NULL,NULL,NULL,'txn','方世玉大仓库');
+/*!40000 ALTER TABLE `productthrough` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `repairpicking`
+--
+
+DROP TABLE IF EXISTS `repairpicking`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `repairpicking` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `repairpicking`
+--
+
+LOCK TABLES `repairpicking` WRITE;
+/*!40000 ALTER TABLE `repairpicking` DISABLE KEYS */;
+INSERT INTO `repairpicking` VALUES (1,NULL,'repairOrderReceiptNo',NULL,NULL,NULL,'txn','关联施工单号'),(2,NULL,'productSeller',NULL,NULL,NULL,'txn','销售人'),(3,NULL,'warehouse',NULL,NULL,NULL,'txn','仓库'),(4,NULL,'repairStatus',NULL,NULL,NULL,'txn','状态'),(5,NULL,NULL,'a[class=\'showRepairPicking\']',NULL,NULL,'txn','单号'),(6,NULL,NULL,'a[class=\'showRepair\']',NULL,NULL,'txn','结果.关联施工单号'),(7,NULL,'repairPickingDTOs0.outStorage',NULL,NULL,NULL,'txn','出库'),(8,NULL,NULL,NULL,NULL,'a#clickShow','txn','更多'),(9,NULL,NULL,NULL,NULL,'a#clickShow','txn','收拢');
+/*!40000 ALTER TABLE `repairpicking` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rfbuy`
+--
+
+DROP TABLE IF EXISTS `rfbuy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rfbuy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rfbuy`
+--
+
+LOCK TABLES `rfbuy` WRITE;
+/*!40000 ALTER TABLE `rfbuy` DISABLE KEYS */;
+INSERT INTO `rfbuy` VALUES (1,NULL,'orderSupplierInfo',NULL,NULL,NULL,'txn','详细'),(2,NULL,'deliveryDateStr',NULL,NULL,NULL,'txn','预计交货日期'),(3,NULL,'saveDraftOrder',NULL,NULL,NULL,'txn','保存草稿'),(4,NULL,'cancelBtn',NULL,NULL,NULL,'txn','清空'),(5,NULL,NULL,NULL,'//a[text()=\'新增采购\']',NULL,'txn','新增采购'),(6,NULL,'purchaseSaveBtn',NULL,NULL,NULL,'txn','确认采购');
+/*!40000 ALTER TABLE `rfbuy` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sale`
+--
+
+DROP TABLE IF EXISTS `sale`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sale` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sale`
+--
+
+LOCK TABLES `sale` WRITE;
+/*!40000 ALTER TABLE `sale` DISABLE KEYS */;
+INSERT INTO `sale` VALUES (1,NULL,NULL,NULL,'//a[text()=\'新增销售\']',NULL,'txn','新增销售'),(3,NULL,'vehicleContact',NULL,NULL,NULL,'txn','车主'),(4,NULL,'vehicleMobile',NULL,NULL,NULL,'txn','车主号码'),(5,NULL,'goodsSaler',NULL,NULL,NULL,'txn','销售人'),(6,NULL,'orderVestDate',NULL,NULL,NULL,'txn','销售日期'),(7,NULL,'saleAccountBtn',NULL,NULL,NULL,'txn','销售.结算'),(8,NULL,'printBtn',NULL,NULL,NULL,'txn','销售.打印');
+/*!40000 ALTER TABLE `sale` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `salesreturn`
+--
+
+DROP TABLE IF EXISTS `salesreturn`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `salesreturn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `salesreturn`
+--
+
+LOCK TABLES `salesreturn` WRITE;
+/*!40000 ALTER TABLE `salesreturn` DISABLE KEYS */;
+INSERT INTO `salesreturn` VALUES (1,NULL,NULL,NULL,'//a[text()=\'新增退货\']',NULL,'txn','销售退货.新增退货'),(2,NULL,'saleReturnBtn',NULL,NULL,NULL,'txn','销售退货.确认退货');
+/*!40000 ALTER TABLE `salesreturn` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `stocksearch`
+--
+
+DROP TABLE IF EXISTS `stocksearch`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stocksearch` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'stocksearch',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stocksearch`
+--
+
+LOCK TABLES `stocksearch` WRITE;
+/*!40000 ALTER TABLE `stocksearch` DISABLE KEYS */;
+INSERT INTO `stocksearch` VALUES (1,NULL,NULL,NULL,NULL,'a[class*=\'addNewSup blue_color\']','stocksearch','库存查询.新增商品'),(2,NULL,'product_kind',NULL,NULL,NULL,'stocksearch','库存查询.商品分类'),(3,NULL,'supplierInfoSearchText',NULL,NULL,NULL,'stocksearch','库存查询.供应商'),(4,NULL,'storehouseText',NULL,NULL,NULL,'stocksearch','库存查询.仓库'),(5,NULL,'searchInventoryBtn',NULL,NULL,NULL,'stocksearch','库存查询.查询'),(6,NULL,'clearConditionBtn',NULL,NULL,NULL,'stocksearch','库存查询.清空条件'),(7,NULL,NULL,NULL,NULL,'span[class*=\'J-productNameInfo\']','stocksearch','商品信息'),(8,NULL,NULL,NULL,NULL,'div[id*=\'addNewProduct_dialog\']','stocksearch','新增商品对话框'),(9,NULL,NULL,NULL,NULL,'input[name*=\'new_commodityCode\']','stocksearch','新增商品.商品编码'),(10,NULL,NULL,NULL,NULL,'input[name*=\'new_name\']','stocksearch','新增商品.品名'),(11,NULL,NULL,NULL,NULL,'input[name*=\'new_spec\']','stocksearch','新增商品.规格'),(12,NULL,NULL,NULL,NULL,'input[name*=\'new_productVehicleBrand\']','stocksearch','新增商品.车辆品牌'),(13,NULL,NULL,NULL,NULL,'input[name*=\'new_recommendedPrice\']','stocksearch','新增商品.零售价'),(14,NULL,NULL,NULL,NULL,'input[name*=\'new_productType\']','stocksearch','新增商品.商品分类'),(15,NULL,NULL,NULL,NULL,'input[name*=\'new_brand\']','stocksearch','新增商品.品牌'),(16,NULL,NULL,NULL,NULL,'input[name*=\'new_model\']','stocksearch','新增商品.车型'),(17,NULL,NULL,NULL,NULL,'input[name*=\'new_tradePrice\']','stocksearch','新增商品.批发价'),(18,NULL,NULL,NULL,NULL,'input[name*=\'new_upperLimit\']','stocksearch','新增商品.上限'),(19,NULL,NULL,NULL,NULL,'input[name*=\'new_lowerLimit\']','stocksearch','新增商品.下限'),(20,NULL,NULL,NULL,NULL,'a[class*=\'J_saveNewProduct\']','stocksearch','新增商品.保存'),(21,NULL,NULL,NULL,NULL,'a[class*=\'J_resetNewProduct\']','stocksearch','新增商品.重置'),(22,NULL,NULL,NULL,NULL,'input[name=\'new_sellUnit\']','stocksearch','新增商品.单位'),(23,NULL,NULL,NULL,NULL,'ul[class*=\'ui-autocomplete\']','stocksearch','新增商品.单位下拉列表'),(24,NULL,NULL,NULL,'//a[text()=\'个\']',NULL,'stocksearch','新增商品.个'),(25,NULL,NULL,NULL,NULL,'div[aria-labelledby*=\'ui-dialog-title-jConfirm\']','stocksearch','新增商品.确定对话框'),(26,NULL,NULL,NULL,'//span[text()=\'确定\']',NULL,'stocksearch','新增商品.确定'),(27,NULL,NULL,NULL,NULL,'i[class=\'slider-btnExpand\']','stocksearch','滑动器按钮'),(28,NULL,'itemDTOs0.recommendedPrice',NULL,NULL,NULL,'stocksearch','库存查询.批发价'),(29,NULL,'productDTOs0.recommendedPrice',NULL,NULL,NULL,'stocksearch','库存查询.零售价'),(30,NULL,'productDTOs0.lowerLimit',NULL,NULL,NULL,'stocksearch','库存查询.下限'),(31,NULL,'productDTOs0.upperLimit',NULL,NULL,NULL,'stocksearch','库存查询.上限'),(32,NULL,NULL,NULL,NULL,'a[onclick=\'EditGoodsILnfo.deleteProduct(1)\']','stocksearch','库存查询.删除'),(33,NULL,NULL,NULL,NULL,'a[href*=\'productThrough.do?method=redirectProductThroughDetail&productId=\']','stocksearch','库存查询.交易明细'),(34,NULL,'menu_id_stock_search1',NULL,NULL,NULL,'stocksearch','库存查询.1'),(35,NULL,'menu_id_stock_search2',NULL,NULL,NULL,'stocksearch','库存查询.2'),(36,NULL,'menu_id_stock_search3',NULL,NULL,NULL,'stocksearch','库存查询.3'),(37,NULL,'nextPage_stock_search',NULL,NULL,NULL,'stocksearch','库存查询.下一页'),(38,NULL,'lastPage_stock_search',NULL,NULL,NULL,'stocksearch','库存查询.尾页'),(39,NULL,'getPage_stock_search',NULL,NULL,NULL,'stocksearch','库存查询.第几页'),(40,NULL,'button_stock_search',NULL,NULL,NULL,'stocksearch','库存查询.跳转'),(41,NULL,'submitPrint',NULL,NULL,NULL,'stocksearch','打印'),(42,NULL,NULL,NULL,'//a[text()=\'采 购\']',NULL,'stocksearch','采购'),(43,NULL,NULL,NULL,'//a[text()=\'入 库\']',NULL,'stocksearch','入库'),(44,NULL,NULL,NULL,'//a[text()=\'销 售\']',NULL,'stocksearch','销售'),(45,NULL,NULL,NULL,'//a[text()=\'施 工\']',NULL,'stocksearch','施工'),(46,NULL,NULL,NULL,'//a[text()=\'入库退货\']',NULL,'stocksearch','入库退货'),(47,NULL,NULL,NULL,'//a[text()=\'销售退货\']',NULL,'stocksearch','销售退货'),(48,NULL,NULL,NULL,'//a[text()=\'库存盘点\']',NULL,'stocksearch','库存盘点');
+/*!40000 ALTER TABLE `stocksearch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `storage`
+--
+
+DROP TABLE IF EXISTS `storage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `storage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `storage`
+--
+
+LOCK TABLES `storage` WRITE;
+/*!40000 ALTER TABLE `storage` DISABLE KEYS */;
+INSERT INTO `storage` VALUES (1,NULL,NULL,NULL,'//a[text()=\'新增入库\']',NULL,'txn','新增入库'),(2,NULL,NULL,NULL,'//a[text()=\'草稿箱\']',NULL,'txn','草稿箱'),(3,NULL,NULL,NULL,'//a[text()=\'详细\']',NULL,'txn','详细'),(4,NULL,'supplier',NULL,NULL,NULL,'txn','供应商'),(5,NULL,NULL,NULL,'//div[@id=\'id-searchcompleteMultiselect\']/div/div/ul/li',NULL,'txn','供应商选择框'),(6,NULL,'inventorySaveBtn',NULL,NULL,NULL,'txn','确认入库'),(7,NULL,'itemDTOs0.productName',NULL,NULL,NULL,'txn','入库单.品名'),(8,NULL,'itemDTOs0.brand',NULL,NULL,NULL,'txn','入库单.品牌'),(9,NULL,'itemDTOs0.spec',NULL,NULL,NULL,'txn','入库单.规格'),(10,NULL,'itemDTOs0.model',NULL,NULL,NULL,'txn','入库单.型号'),(11,NULL,'itemDTOs0.vehicleModel',NULL,NULL,NULL,'txn','入库单.车型'),(12,NULL,'itemDTOs0.vehicleBrand',NULL,NULL,NULL,'txn','入库单.车辆品牌'),(13,NULL,'itemDTOs0.purchasePrice',NULL,NULL,NULL,'txn','入库单.单价'),(14,NULL,'itemDTOs0.amount',NULL,NULL,NULL,'txn','入库单.入库量'),(15,NULL,'itemDTOs0.unit',NULL,NULL,NULL,'txn','入库单.单位'),(16,NULL,'itemDTOs0.productKind',NULL,NULL,NULL,'txn','入库单.商品分类'),(17,NULL,'itemDTOs0.lowerLimit',NULL,NULL,NULL,'txn','入库单.下限'),(18,NULL,'itemDTOs0.upperLimit',NULL,NULL,NULL,'txn','入库单.上限'),(19,NULL,'itemDTOs0.tradePrice',NULL,NULL,NULL,'txn','入库单.批发价'),(20,NULL,'itemDTOs0.recommendedPrice',NULL,NULL,NULL,'txn','入库单.销售价'),(22,NULL,NULL,NULL,NULL,'a[href*=\'productThrough.do?method=redirectProductThroughDetail&productId=\']','txn','入库单.交易明细'),(23,NULL,'iframe_PopupBox_account',NULL,NULL,NULL,'txn','结算详细'),(24,NULL,'pay_total',NULL,NULL,NULL,'txn','应付总计'),(25,NULL,'cash',NULL,NULL,NULL,'txn','现金'),(26,NULL,'actuallyPaid',NULL,NULL,NULL,'txn','实付金额'),(27,NULL,'creditAmount',NULL,NULL,NULL,'txn','挂账金额'),(28,NULL,'deduction',NULL,NULL,NULL,'txn','优惠金额'),(29,NULL,'discount',NULL,NULL,NULL,'txn','折扣'),(30,NULL,'bankCardAmount',NULL,NULL,NULL,'txn','银联'),(31,NULL,'checkAmount',NULL,NULL,NULL,'txn','支票'),(32,NULL,'checkNo',NULL,NULL,NULL,'txn','支票号'),(33,NULL,'depositAmount',NULL,NULL,NULL,'txn','取用预付'),(34,NULL,'deposit_avaiable',NULL,NULL,NULL,'txn','预付款'),(35,NULL,'checkDetailPrint',NULL,NULL,NULL,'txn','打印单据'),(36,NULL,'surePayStroage',NULL,NULL,NULL,'txn','结算'),(37,NULL,'cancleBtnPayDetail',NULL,NULL,NULL,'txn','取消');
+/*!40000 ALTER TABLE `storage` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test`
+--
+
+DROP TABLE IF EXISTS `test`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'page.test',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test`
+--
+
+LOCK TABLES `test` WRITE;
+/*!40000 ALTER TABLE `test` DISABLE KEYS */;
+/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test1`
+--
+
+DROP TABLE IF EXISTS `test1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'page.test1',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test1`
+--
+
+LOCK TABLES `test1` WRITE;
+/*!40000 ALTER TABLE `test1` DISABLE KEYS */;
+INSERT INTO `test1` VALUES (1,NULL,'#dfdhjfdhkjfd',NULL,NULL,NULL,'page.test1','jun');
+/*!40000 ALTER TABLE `test1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `totalelement`
+--
+
+DROP TABLE IF EXISTS `totalelement`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `totalelement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'index',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `totalelement`
+--
+
+LOCK TABLES `totalelement` WRITE;
+/*!40000 ALTER TABLE `totalelement` DISABLE KEYS */;
+INSERT INTO `totalelement` VALUES (1,NULL,'j_username',NULL,NULL,NULL,'index','登录输入框'),(2,NULL,'j_password',NULL,NULL,NULL,'index','密码输入框'),(3,NULL,'input_submit',NULL,NULL,NULL,'index','提交按钮'),(4,NULL,'j_logout',NULL,NULL,NULL,'index','退出'),(5,NULL,'_searchNameSelect',NULL,NULL,NULL,'index','车牌号选择框'),(6,NULL,'_searchInputText',NULL,NULL,NULL,'index','车牌号输入框'),(7,NULL,'_searchInputButton',NULL,NULL,NULL,'index','搜索按钮'),(8,NULL,'headerHomepageLink',NULL,NULL,NULL,'index','首页'),(9,NULL,'headerWelcomeLink',NULL,NULL,NULL,'index','欢迎使用一发软件'),(10,NULL,'headerShoppingCartDiv',NULL,NULL,NULL,'index','购物车'),(11,NULL,'messageCenterNumber',NULL,NULL,NULL,'index','消息'),(12,NULL,'changeUserPassword',NULL,NULL,NULL,'index','修改密码'),(13,NULL,'toSysAnnouncement',NULL,NULL,NULL,'index','公告'),(14,NULL,'toHelper',NULL,NULL,NULL,'index','帮助'),(15,NULL,NULL,NULL,'//a[text()=\'进销存\']',NULL,'index','进销存'),(16,NULL,NULL,NULL,NULL,'div[class*=\'m_label1\']','index','待办事项标签'),(17,NULL,NULL,NULL,NULL,'div[class*=\'m_label6\']','index','车辆施工标签'),(18,NULL,NULL,NULL,NULL,'div[class*=\'m_label3\']','index','客户管理标签'),(19,NULL,NULL,NULL,NULL,'div[class*=\'m_label5\']','index','供应商管理标签'),(20,NULL,NULL,NULL,NULL,'div[class*=\'m_label8\']','index','供求中心标签'),(21,NULL,NULL,NULL,NULL,'div[class*=\'m_label_stat\']','index','财务统计标签'),(22,NULL,NULL,NULL,NULL,'div[class*=\'m_label4\']','index','系统管理标签'),(23,NULL,NULL,NULL,'//a[@href=\'storage.do?method=getProducts&type=txn\']',NULL,'index','入库'),(24,NULL,NULL,NULL,NULL,'div[class*=\'m_label2\']','index','进销存标签'),(25,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=stockSearch\']',NULL,'index','库存管理'),(26,NULL,NULL,NULL,'//a[@href=\'stockSearch.do?method=getStockSearch&type=txn\']',NULL,'index','库存查询'),(27,NULL,NULL,NULL,'//a[@href=\'inventoryCheck.do?method=toInventoryCheckRecord\']',NULL,'index','库存盘点'),(28,NULL,NULL,NULL,'//a[@href=\'pick.do?method=showRepairPickingListPage\']',NULL,'index','维修领料'),(29,NULL,NULL,NULL,'//a[@href=\'pick.do?method=showInnerPickingListPage\']',NULL,'index','内部领料'),(30,NULL,NULL,NULL,'//a[@href=\'pick.do?method=showInnerReturnListPage\']',NULL,'index','内部退料'),(31,NULL,NULL,NULL,'//a[@href=\'allocateRecord.do?method=allocateRecordList\']',NULL,'index','仓库调拨'),(32,NULL,NULL,NULL,'//a[@href=\'borrow.do?method=toBorrowOrderList\']',NULL,'index','外部借调'),(33,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=storage\']',NULL,'index','入库管理'),(34,NULL,NULL,NULL,'//a[@href=\'RFbuy.do?method=create\']',NULL,'index','采购'),(35,NULL,NULL,NULL,'//a[@href=\'goodsReturn.do?method=createReturnStorage\']',NULL,'index','入库退货'),(36,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=sale\']',NULL,'index','销售管理'),(37,NULL,NULL,NULL,'//a[@href=\'washBeauty.do?method=getCustomerInfoByLicenceNo&type=customer&licenceNo=\']',NULL,'index','洗车美容'),(38,NULL,NULL,NULL,'//a[@href=\'txn.do?method=getRepairOrderByVehicleNumber&task=maintain&vehicleNumber=\']',NULL,'index','施工销售'),(39,NULL,NULL,NULL,'//a[@href=\'category.do?method=toSetCategoryPage\']',NULL,'index','设定施工项目'),(40,NULL,NULL,NULL,'//a[@href=\'insurance.do?method=showInsuranceOrderList\']',NULL,'index','保险理赔'),(41,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=businessStat\']',NULL,'index','营业统计'),(42,NULL,NULL,NULL,'//a[@href=\'businessStat.do?method=getBusinessStat\']',NULL,'index','营业额'),(43,NULL,NULL,NULL,'//a[@href=\'runningStat.do?method=getRunningStat\']',NULL,'index','营业流水'),(44,NULL,NULL,NULL,'//a[@href=\'member.do?method=memberStat\']',NULL,'index','会员消费'),(45,NULL,NULL,NULL,'//a[@href=\'itemStat.do?method=getItemStat&type=customerStat\']',NULL,'index','营业分析'),(46,NULL,NULL,NULL,'//a[@href=\'itemStat.do?method=getItemStat&type=customerStat\']',NULL,'index','客户交易'),(47,NULL,NULL,NULL,'//a[@href=\'itemStat.do?method=getItemStat&type=supplierStat\']',NULL,'index','供应商交易'),(48,NULL,NULL,NULL,'//a[@href=\'itemStat.do?method=getItemStat&type=categoryStat\']',NULL,'index','分项销售'),(49,NULL,NULL,NULL,'//a[@href=\'businessAnalysis.do?method=redirectSalesReturnStat\']',NULL,'index','BusinessStat.销售退货'),(50,NULL,NULL,NULL,'//a[@href=\'businessAnalysis.do?method=redirectInventoryReturnStat\']',NULL,'index','BusinessStat.入库退货'),(51,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=arrearsStat\']',NULL,'index','应收应付'),(52,NULL,NULL,NULL,'//a[@href=\'arrears.do?method=toPayableStat\']',NULL,'index','应付款'),(53,NULL,NULL,NULL,'//a[@href=\'arrears.do?method=toReceivableStat\']',NULL,'index','应收款'),(54,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=depositStat\']',NULL,'index','预收预付'),(55,NULL,NULL,NULL,'//a[@href=\'depositOrdersStat.do?method=renderSupplierDepositOrderQueryPage\']',NULL,'index','预付'),(56,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=costStat\']',NULL,'index','采购分析'),(57,NULL,NULL,NULL,'//a[@href=\'costStat.do?method=getCostStat\']',NULL,'index','成本'),(58,NULL,NULL,NULL,'//a[@href=\'costStat.do?method=getPriceStat\']',NULL,'index','价格波动'),(59,NULL,NULL,NULL,'//a[@href=\'costStat.do?method=getSupplierStat\']',NULL,'index','CostStat.供应商交易'),(60,NULL,NULL,NULL,'//a[@href=\'costStat.do?method=getReturnStat\']',NULL,'index','退货'),(61,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=salesStat\']',NULL,'index','畅销滞销品'),(62,NULL,NULL,NULL,'//a[@href=\'salesStat.do?method=getGoodSaleCost\']',NULL,'index','畅销商品'),(63,NULL,NULL,NULL,'//a[@href=\'salesStat.do?method=getBadSaleCost\']',NULL,'index','滞销商品'),(64,NULL,NULL,NULL,'//a[@href=\'preBuyMain.do?method=toPreBuyMain\']',NULL,'index','我要买配件'),(65,NULL,NULL,NULL,'//a[@href=\'preBuyOrder.do?method=createPreBuyOrder\']',NULL,'index','发布求购'),(66,NULL,NULL,NULL,'//a[@href=\'preBuyOrder.do?method=preBuyOrderManage\']',NULL,'index','我的求购'),(67,NULL,NULL,NULL,'//a[@href=\'shoppingCart.do?method=shoppingCartManage\']',NULL,'index','SupplyDemand.购物车'),(68,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=orderCenter\']',NULL,'index','订单中心'),(69,NULL,NULL,NULL,'//a[@href=\'orderCenter.do?method=getTodoOrders&type=TODO_PURCHASE_ORDERS\']',NULL,'index','在线采购订单'),(70,NULL,NULL,NULL,'//a[@href=\'onlinePurchaseReturnOrder.do?method=toOnlinePurchaseReturnOrder\']',NULL,'index','在线入库退货单'),(71,NULL,NULL,NULL,'//a[@href=\'apply.do?method=getApplySuppliersIndexPage\']',NULL,'index','找供应商'),(72,NULL,NULL,NULL,'//a[@href=\'autoAccessoryOnline.do?method=toCommodityQuotations\']',NULL,'index','配件报价'),(73,NULL,NULL,NULL,'//a[@href=\'shopData.do?method=toManageShopData\']',NULL,'index','本店资料'),(74,NULL,NULL,NULL,'//a[@href=\'totalelement.do?method=totalelementIndex&pageType=all\']',NULL,'index','单据查询'),(75,NULL,NULL,NULL,'//a[@href=\'totalelement.do?method=totalelementIndex&pageType=all\']',NULL,'index','系统单据'),(76,NULL,NULL,NULL,'//a[@href=\'totalelement.do?method=toInquiryImportedOrder&pageType=all\']',NULL,'index','导入单据'),(77,NULL,NULL,NULL,'//a[@href=\'productThrough.do?method=redirectProductThroughDetail\']',NULL,'index','出入库明细'),(78,NULL,NULL,NULL,'//a[@href=\'remind.do?method=newtodo\']',NULL,'index','待办事项'),(79,NULL,NULL,NULL,'//a[@href=\'remind.do?method=toPlansRemind\']',NULL,'index','自定义提醒'),(80,NULL,NULL,NULL,'//a[@href=\'appoint.do?method=showAppointOrderList\']',NULL,'index','预约服务'),(81,NULL,NULL,NULL,'//a[@href=\'staffManage.do?method=showStaffManagePage\']',NULL,'index','员工管理'),(82,NULL,NULL,NULL,'//a[@href=\'staffManage.do?method=showStaffManagePage\']',NULL,'index','员工列表'),(83,NULL,NULL,NULL,'//a[@href=\'navigator.do?method=permissionManager\']',NULL,'index','职位权限列表'),(84,NULL,NULL,NULL,'//a[@href=\'admin.do?method=messageSwitch\']',NULL,'index','自定义配置'),(85,NULL,NULL,NULL,'//a[@href=\'admin.do?method=messageSwitch\']',NULL,'index','功能配置'),(86,NULL,NULL,NULL,'//a[@href=\'pageCustomizerConfig.do?method=show\']',NULL,'index','页面配置'),(87,NULL,NULL,NULL,'//a[@href=\'bcgogoReceivable.do?method=bcgogoReceivableRecord\']',NULL,'index','在线支付'),(88,NULL,NULL,NULL,'//a[@href=\'import.do?method=openSimpleImportPage\']',NULL,'index','数据导入'),(89,NULL,NULL,NULL,'//a[@href=\'import.do?method=openSimpleImportPage\']',NULL,'index','模板导入'),(90,NULL,NULL,NULL,'//a[@href=\'import.do?method=openImportPage\']',NULL,'index','自定义导入'),(91,NULL,'my_date_yesterday',NULL,NULL,NULL,'index','昨天'),(92,NULL,'my_date_today',NULL,NULL,NULL,'index','今天'),(93,NULL,'my_date_lastweek',NULL,NULL,NULL,'index','上月'),(94,NULL,'my_date_thisweek',NULL,NULL,NULL,'index','本周'),(95,NULL,'my_date_thismonth',NULL,NULL,NULL,'index','本月'),(96,NULL,'my_date_thisyear',NULL,NULL,NULL,'index','本年'),(97,NULL,'my_date_self_defining',NULL,NULL,NULL,'index','自定义时间段'),(98,NULL,'startDate',NULL,NULL,NULL,'index','开始日期'),(99,NULL,'endDate',NULL,NULL,NULL,'index','结束日期'),(100,NULL,'startTimeStr',NULL,NULL,NULL,'index','开始时间'),(101,NULL,'endTimeStr',NULL,NULL,NULL,'index','结束时间'),(102,NULL,'searchWord',NULL,NULL,NULL,'index','关键词'),(103,NULL,'productName',NULL,NULL,NULL,'index','品名'),(104,NULL,'productBrand',NULL,NULL,NULL,'index','品牌'),(105,NULL,'productSpec',NULL,NULL,NULL,'index','规格'),(106,NULL,'productModel',NULL,NULL,NULL,'index','型号'),(107,NULL,'productVehicleBrand',NULL,NULL,NULL,'index','车辆品牌'),(108,NULL,'commodityCode',NULL,NULL,NULL,'index','商品编号'),(109,NULL,'productVehicleModel',NULL,NULL,NULL,'index','车型'),(110,NULL,'searchBtn',NULL,NULL,NULL,'index','查询'),(111,NULL,'export',NULL,NULL,NULL,'index','导出'),(112,NULL,'contact',NULL,NULL,NULL,'index','联系人'),(113,NULL,'statistics',NULL,NULL,NULL,'index','统计'),(114,NULL,'resetSearchCondition',NULL,NULL,NULL,'index','重置'),(115,NULL,NULL,NULL,'//a[text()=\'财务统计\']',NULL,'index','财务统计'),(117,NULL,'licenceNo',NULL,NULL,NULL,'index','车牌号'),(118,NULL,'carwashBtn',NULL,NULL,NULL,'index','确认消费'),(119,NULL,'confirmBtn',NULL,NULL,NULL,'index','确认'),(120,NULL,NULL,NULL,'//a[text()=\'车辆施工\']',NULL,'index','车辆施工导航');
+/*!40000 ALTER TABLE `totalelement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `txnelement`
+--
+
+DROP TABLE IF EXISTS `txnelement`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `txnelement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(45) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'txn',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `txnelement`
+--
+
+LOCK TABLES `txnelement` WRITE;
+/*!40000 ALTER TABLE `txnelement` DISABLE KEYS */;
+INSERT INTO `txnelement` VALUES (1,NULL,NULL,NULL,NULL,'WEB.TXN.SALE_MANAGE.RETURN','txn','销售退货标签'),(2,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.SALE_MANAGE.SALE\']','txn','销售标签'),(3,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.PURCHASE_MANAGE.RETURN\']','txn','入库退货单标签'),(4,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.PURCHASE_MANAGE.RFbuy\']','txn','采购单标签'),(5,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.INVENTORY_MANAGE.BORROW_ORDER\']','txn','外部借调标签'),(6,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.INVENTORY_MANAGE.ALLOCATE_RECORD\']','txn','仓库调拨标签'),(7,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'TXN_INVENTORY_MANAGE_STOCK_SEARCH\']','txn','库存查询标签'),(8,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.INVENTORY_MANAGE.INNER_RETURN\']','txn','内部退料标签'),(9,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.INVENTORY_MANAGE.INNER_PICKING\']','txn','内部领料标签'),(10,NULL,'repairPickingTab',NULL,NULL,NULL,'txn','维修领料标签'),(11,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.PURCHASE_MANAGE.STORAGE\']','txn','入库单标签'),(12,NULL,NULL,NULL,NULL,'a[MENU-NAME*=\'WEB.TXN.INVENTORY_MANAGE.INVENTORY_PRICE_ADJUSTMENT.BASE\']','txn','库存盘点标签'),(13,NULL,'supplier',NULL,NULL,NULL,'txn','供应商'),(14,NULL,NULL,NULL,'//div[@id=\'id-searchcompleteMultiselect\']/div/div/ul/li',NULL,'txn','供应商选择框'),(15,NULL,'landline',NULL,NULL,NULL,'txn','座机'),(16,NULL,'mobile',NULL,NULL,NULL,'txn','联系电话'),(17,NULL,'customerInfo',NULL,NULL,NULL,'txn','更多客户信息'),(18,NULL,'customer',NULL,NULL,NULL,'txn','客户'),(19,NULL,'receiptNo',NULL,NULL,NULL,'txn','领料单号'),(20,NULL,'storehouseId',NULL,NULL,NULL,'txn','选择仓库'),(21,NULL,'pickingMan',NULL,NULL,NULL,'txn','领料人'),(22,NULL,'saveDraftOrder',NULL,NULL,NULL,'txn','保存草稿'),(23,NULL,'cancelBtn',NULL,NULL,NULL,'txn','清空'),(24,NULL,'orderSupplierInfo',NULL,NULL,NULL,'txn','详细'),(25,NULL,NULL,NULL,'//a[text()=\'草稿箱\']',NULL,'txn','草稿箱'),(26,NULL,'operationMan',NULL,NULL,NULL,'txn','操作人'),(27,NULL,NULL,NULL,NULL,'i[class=\'slider-btnExpand\']','txn','滑动器按钮'),(28,NULL,'itemDTOs0.commodityCode',NULL,NULL,NULL,'txn','项目商品编号'),(29,NULL,NULL,NULL,'//div[@id=\'id-searchcomplete\']/div/div/ul/li[2]',NULL,'txn','项目商品编号选择框'),(30,NULL,'menu_id1null',NULL,NULL,NULL,'txn','进销存.1'),(31,NULL,'menu_id2null',NULL,NULL,NULL,'txn','进销存.2'),(32,NULL,'nextPagenull',NULL,NULL,NULL,'txn','进销存.下一页'),(33,NULL,'lastPagenull',NULL,NULL,NULL,'txn','进销存.尾页'),(34,NULL,'getPagenull',NULL,NULL,NULL,'txn','进销存.第几页'),(35,NULL,'buttonnull',NULL,NULL,NULL,'txn','进销存.跳转'),(36,NULL,'itemDTOs1.deletebutton',NULL,NULL,NULL,'txn','ITEM删除');
+/*!40000 ALTER TABLE `txnelement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `washbeauty`
+--
+
+DROP TABLE IF EXISTS `washbeauty`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `washbeauty` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des` varchar(250) DEFAULT NULL,
+  `idvalue` varchar(150) DEFAULT NULL,
+  `namevalue` varchar(150) DEFAULT NULL,
+  `xpathvalue` varchar(250) DEFAULT NULL,
+  `cssvalue` varchar(250) DEFAULT NULL,
+  `pagename` varchar(45) DEFAULT 'washBeauty',
+  `keyvalue` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keyvalue_UNIQUE` (`keyvalue`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `washbeauty`
+--
+
+LOCK TABLES `washbeauty` WRITE;
+/*!40000 ALTER TABLE `washbeauty` DISABLE KEYS */;
+INSERT INTO `washbeauty` VALUES (1,NULL,NULL,NULL,NULL,'a[href=\'washBeauty.do?method=createWashBeautyOrder\']','washBeauty','洗车美容'),(2,NULL,NULL,NULL,NULL,'a[href=\'javascript:newWashBeautyOrder()\']','washBeauty','新增洗车美容'),(3,NULL,'orderVestDate',NULL,NULL,NULL,'washBeauty','消费时间'),(4,NULL,'totalConsume',NULL,NULL,NULL,'washBeauty','累计消费'),(5,NULL,'customer',NULL,NULL,NULL,'washBeauty','客户名'),(6,NULL,'washBeautyOrderItemDTOs0.serviceId',NULL,NULL,NULL,'washBeauty','服务内容'),(7,NULL,'washBeautyOrderItemDTOs0.consumeTypeStr',NULL,NULL,NULL,'washBeauty','消费方式'),(8,NULL,'washBeautyOrderItemDTOs0.businessCategoryName',NULL,NULL,NULL,'washBeauty','营业分类'),(9,NULL,'washBeautyOrderItemDTOs0.salesMan',NULL,NULL,NULL,'washBeauty','洗车美容.施工人'),(10,NULL,'washBeautyOrderItemDTOs0.price',NULL,NULL,NULL,'washBeauty','洗车美容.金额'),(11,NULL,'carwashBtn',NULL,NULL,NULL,'washBeauty','确认消费'),(12,NULL,'serviceDTOs0.businessCategoryName',NULL,NULL,NULL,'washBeauty','营业分类1'),(13,NULL,'printBtn',NULL,NULL,NULL,'washBeauty','打印小票');
+/*!40000 ALTER TABLE `washbeauty` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-12-17 17:18:24

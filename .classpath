@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="plugin/selenium-server.jar"/>
+	<classpathentry kind="lib" path="plugin/jxl.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="plugin/activation.jar"/>
+	<classpathentry kind="lib" path="plugin/ant-jmeter-1.0.9.jar"/>
+	<classpathentry kind="lib" path="plugin/apache-ant-1.8.2.jar"/>
+	<classpathentry kind="lib" path="plugin/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="plugin/commons-pool.jar"/>
+	<classpathentry kind="lib" path="plugin/databene-benerator-0.7.1.jar"/>
+	<classpathentry kind="lib" path="plugin/databene-commons-0.5.9.jar"/>
+	<classpathentry kind="lib" path="plugin/databene-webdecs-0.6.1.jar"/>
+	<classpathentry kind="lib" path="plugin/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="plugin/feed4testng-1.0.jar"/>
+	<classpathentry kind="lib" path="plugin/fitnesse-standalone.jar"/>
+	<classpathentry kind="lib" path="plugin/fitnesse.jar"/>
+	<classpathentry kind="lib" path="plugin/jdbacl-0.6.11.jar"/>
+	<classpathentry kind="lib" path="plugin/jyaml-1.3.jar"/>
+	<classpathentry kind="lib" path="plugin/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="plugin/mail.jar"/>
+	<classpathentry kind="lib" path="plugin/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="plugin/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="plugin/poi-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="plugin/poi-excelant-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="plugin/poi-ooxml-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="plugin/poi-ooxml-schemas-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="plugin/poi-scratchpad-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="plugin/proxool-0.9.1.jar"/>
+	<classpathentry kind="lib" path="plugin/proxool-cglib.jar"/>
+	<classpathentry kind="lib" path="plugin/saxon-8.7.jar"/>
+	<classpathentry kind="lib" path="plugin/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="plugin/slf4j-log4j12-1.5.8.jar"/>
+	<classpathentry kind="lib" path="plugin/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="plugin/testng-6.8.6beta.jar"/>
+	<classpathentry kind="lib" path="plugin/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="plugin/vtd-xml.jar"/>
+	<classpathentry kind="lib" path="plugin/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="plugin/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="plugin/selenium-java-2.37.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
