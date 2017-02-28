@@ -11,7 +11,7 @@ public interface Actions {
 	public String VERIFY_ITEM         = "verify";
 	public String SWITCH_WINDOWS      = "switch";
 	public String SCREEN_WINDOWS      = "screen";
-	public String SLEEP_TIME          = "sleep";
+	public String SLEEP_ACTION          = "sleep";
 	public String SELECT_ITEM         = "select";
 	public String UL_LIST             = "ul";
 	public String TESTCASE_NAME       = "name";

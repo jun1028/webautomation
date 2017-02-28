@@ -12,9 +12,12 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.seleniumhq.jetty7.util.log.Log;
 
 import com.broada.spring.BS2AutoTest;
 import com.broada.spring.BrowserType;
+import com.test.basetest.check.BaseCheck;
+import com.test.fixture.IActions;
 
 
 /**
@@ -24,7 +27,7 @@ import com.broada.spring.BrowserType;
  * @author water
  * 
  */
-public class HtmlPage extends BS2AutoTest implements PageObject {
+public class HtmlPage extends BS2AutoTest implements IActions {
 
 	// private static HtmlPage htmlPage;
 
@@ -118,7 +121,8 @@ public class HtmlPage extends BS2AutoTest implements PageObject {
 		this.browser = null;
 		this.currentBrowser = null;
 	}
-
+	
+	@Override
 	public void close() {
 		super.close();
 		this.browser = null;
@@ -189,5 +193,40 @@ public class HtmlPage extends BS2AutoTest implements PageObject {
 			System.out.println(e.getMessage());
 			return false;
 		}
+	}
+	
+	@Override
+	public void click(String element) {
+		super.click(element);
+	}
+
+	@Override
+	public void doubleClick(String element) {
+		super.doubleClick(element);
+	}
+
+	@Override
+	public void moveOn(String elment) {
+		super.moveOn(elment);
+	}
+
+	/***
+	 * @param checkType
+	 *            check type, (URL, TEXT, ELEMENT)
+	 */
+	public boolean check(String checkType, String expected) {
+		boolean bResult = false;
+		bResult = BaseCheck.parseExpected(checkType, expected, this);
+		return bResult;
+	}
+
+
+	@Override
+	public void open(String url) {
+		openUrl(url);
+	}
+
+	@Override
+	public void select(String obj) {
 	}
 }

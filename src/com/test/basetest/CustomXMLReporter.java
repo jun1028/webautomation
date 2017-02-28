@@ -4,6 +4,9 @@ package com.test.basetest;
  *  copy from testNG
  */
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
@@ -14,6 +17,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.TimeZone;
 
+import org.apache.commons.logging.Log;
 import org.testng.IReporter;
 import org.testng.ISuite;
 import org.testng.ISuiteResult;
@@ -22,20 +26,23 @@ import org.testng.ITestNGMethod;
 import org.testng.Reporter;
 import org.testng.internal.Utils;
 import org.testng.reporters.XMLReporterConfig;
-import org.testng.reporters.XMLStringBuffer;
 import org.testng.reporters.XMLSuiteResultWriter;
 import org.testng.xml.XmlSuite;
+
+import com.test.common.LogHelper;
 
 /**
  * The main entry for the XML generation operation
  * 
- * @author Cosmin Marginean, Mar 16, 2007
  */
 public class CustomXMLReporter implements IReporter {
-	public static final String FILE_NAME = "testng-results.xml";
+	
+	private static Log log = LogHelper.getLog(CustomXMLReporter.class);
+	
+	public static final String FILE_NAME = "testng-results-custom.xml";
 
 	private final CustomXMLReporterConfig config = new CustomXMLReporterConfig();
-	private XMLStringBuffer rootBuffer;
+	private CustomXMLStringBuffer rootBuffer;
 
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
@@ -69,11 +76,34 @@ public class CustomXMLReporter implements IReporter {
 			writeSuite(suites.get(i).getXmlSuite(), suites.get(i));
 		}
 		rootBuffer.pop();
-		Utils.writeUtf8File(config.getOutputDirectory(), FILE_NAME, rootBuffer,
+//		Utils.writeUtf8File(config.getOutputDirectory(), FILE_NAME, rootBuffer,
+//				null /* no prefix */);
+		writeUtf8File(config.getOutputDirectory(), FILE_NAME, rootBuffer,
 				null /* no prefix */);
 	}
+	
+	public static void writeUtf8File( String outputDir, String fileName, CustomXMLStringBuffer xsb, String prefix) {
+	    try {
+	      final File outDir = (outputDir != null) ? new File(outputDir) : new File("").getAbsoluteFile();
+	      if (!outDir.exists()) {
+	        outDir.mkdirs();
+	      }
+	      final File file = new File(outDir, fileName);
+	      if (!file.exists()) {
+	        file.createNewFile();
+	      }
+	      try (final OutputStreamWriter w = new OutputStreamWriter(new FileOutputStream(file), "GBK")) {
+	        if (prefix != null) {
+	          w.append(prefix);
+	        }
+	        xsb.toWriter(w);
+	      }
+	    } catch(IOException ex) {
+	    	log.error(ex.getMessage(), ex);
+	    }
+	  }
 
-	private void writeReporterOutput(XMLStringBuffer xmlBuffer) {
+	private void writeReporterOutput(CustomXMLStringBuffer xmlBuffer) {
 		// TODO: Cosmin - maybe a <line> element isn't indicated for each line
 		xmlBuffer.push(XMLReporterConfig.TAG_REPORTER_OUTPUT);
 		List<String> output = Reporter.getOutput();
@@ -100,7 +130,7 @@ public class CustomXMLReporter implements IReporter {
 	}
 
 	private void writeSuiteToFile(File suiteFile, ISuite suite) {
-		XMLStringBuffer xmlBuffer = new XMLStringBuffer();
+		CustomXMLStringBuffer xmlBuffer = new CustomXMLStringBuffer();
 		writeSuiteToBuffer(xmlBuffer, suite);
 		File parentDir = suiteFile.getParentFile();
 		if (parentDir.exists() || suiteFile.getParentFile().mkdirs()) {
@@ -109,7 +139,7 @@ public class CustomXMLReporter implements IReporter {
 		}
 	}
 
-	private File referenceSuite(XMLStringBuffer xmlBuffer, ISuite suite) {
+	private File referenceSuite(CustomXMLStringBuffer xmlBuffer, ISuite suite) {
 		String relativePath = suite.getName() + File.separatorChar + FILE_NAME;
 		File suiteFile = new File(config.getOutputDirectory(), relativePath);
 		Properties attrs = new Properties();
@@ -118,7 +148,7 @@ public class CustomXMLReporter implements IReporter {
 		return suiteFile;
 	}
 
-	private void writeSuiteToBuffer(XMLStringBuffer xmlBuffer, ISuite suite) {
+	private void writeSuiteToBuffer(CustomXMLStringBuffer xmlBuffer, ISuite suite) {
 		xmlBuffer.push(XMLReporterConfig.TAG_SUITE, getSuiteAttributes(suite));
 		writeSuiteGroups(xmlBuffer, suite);
 
@@ -132,7 +162,7 @@ public class CustomXMLReporter implements IReporter {
 		xmlBuffer.pop();
 	}
 
-	private void writeSuiteGroups(XMLStringBuffer xmlBuffer, ISuite suite) {
+	private void writeSuiteGroups(CustomXMLStringBuffer xmlBuffer, ISuite suite) {
 		xmlBuffer.push(XMLReporterConfig.TAG_GROUPS);
 		Map<String, Collection<ITestNGMethod>> methodsByGroups = suite
 				.getMethodsByGroups();

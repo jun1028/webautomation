@@ -15,7 +15,7 @@ public class CustomInvokedMethodListener extends InvokedMethodListener {
 	@Override
 	public void afterInvocation(IInvokedMethod method, ITestResult result) {
 		Throwable e = null;
-		result.setAttribute("TESTNAME", "JUN");
+		result.setAttribute("TESTNAME", "water");
 		Reporter.setCurrentTestResult(result);
 		if (method.isTestMethod()) {
 			List<Throwable> verificationFailures = CustomAssert

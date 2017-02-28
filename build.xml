@@ -62,12 +62,13 @@
 			<classfileset dir="${dest}">
 				<include name="*.class" />
 			</classfileset>
+			<jvmarg value="-Dfile.encoding=GB2312"/>  
 		</testng>
 		<!-- <fail message="TEST FAILURE" if="failed" /> -->
 	</target>
 	<!-- make report -->
 	<target name="transform" description="report" depends="run_tests">
-		<xslt in="${output.dir}/testng-results.xml" style="${testConf}/testng-results.xsl" out="${output.dir}/Report.html" force="yes">
+		<xslt in="${output.dir}/testng-results-custom.xml" style="${testConf}/testng-results.xsl" out="${output.dir}/Report.html" force="yes">
 			<outputproperty name="encoding" value="GBK" />
 			<!-- you need to specify the directory here again -->
 			<param name="testNgXslt.outputDir" expression="${output.dir}" />

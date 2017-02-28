@@ -26,7 +26,7 @@ public class BaseCheck extends CustomAssert {
 	public static boolean parseExpected(String expected, HtmlPage page) {
 		return parseExpected("text", expected, page);
 	}
-
+	
 	/**
 	 * parse the special expected result by keyword. if include "select"
 	 * keyword, will execute query from business database if include
@@ -76,6 +76,7 @@ public class BaseCheck extends CustomAssert {
 			}
 
 		} else {
+			fail("expected result column is null!");
 			log.info("expected result column is null!");
 		}
 		return bResult;

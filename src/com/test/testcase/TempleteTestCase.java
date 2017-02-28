@@ -16,7 +16,7 @@ import com.test.basetest.data.SuiteData;
 public abstract class TempleteTestCase extends FileTypeTest {
 
 	//@Optional("testcase.xls") String fName,
-	@Parameters( { "filename", "table-name-of-page-element" })
+	@Parameters( {"table-name-of-page-element" })
 	@BeforeTest
 	public void beforeTest(@Optional("totalelement;firstpage") String tbNameOfPageEl) {
 		if (page == null) {

@@ -7,12 +7,13 @@
 	<listener class-name="com.test.basetest.CustomXMLReporter"></listener>
 	</listeners>
 	
-	<test name ="templete test class" prserve-order="true" >
+	<test name ="templete test class"  >
+		<parameter name="table-name-of-page-element"  value="totalelement;firstpage"/>
 		<classes>
-	      <class name="com.test.testcase.sample.TestTempleteTestCase"/>   
+	      <class name="com.test.testcase.sample.TempleteTestCase2"/>   
 	   </classes> 
 	</test >
-	<!-- 
+	 <!--
 	<test name ="templete login test" prserve-order="true" >
 		<parameter name="table-name-of-page-element"  value="totalelement"/>
 	  	<parameter name="filename"  value="login.xls"/>
@@ -21,13 +22,15 @@
 	   </classes> 
 	</test >
 	-->
-	<test name ="test fixture " prserve-order="true" >
+	
+	<test name ="test fixture " >
 		<parameter name="table-name-of-page-element"  value="totalelement;firstpage"/>
 	  	<parameter name="filename"  value="templete.xls"/>
 		<classes>
 	      <class name="com.test.testcase.ActionFixtureFactory"/>   
 	   </classes> 
 	</test >
+
 	<!--
 	<test name="test " prserve-order="true">
 		<parameter name="filename"  value="smoke\\testcaseforclass.xls"/>

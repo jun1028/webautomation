@@ -23,9 +23,11 @@ import jxl.Sheet;
  * @author water
  * @version 1.0
  ***/
-public class ActionFixture extends ActionAdapter {
-
+public class ActionFixture {
+	
 	private static Log log = LogHelper.getLog(ActionFixture.class);
+	
+	private  HtmlPage page = null;
 	private StringBuffer errMessage = new StringBuffer();
 	/** default value, just make sure every step can go through */
 	private boolean bTestResult = true;
@@ -98,13 +100,6 @@ public class ActionFixture extends ActionAdapter {
 			rowi++;
 			cellStr = excel.getCellStrValue(1, rowi);
 		}
-		// cellStr = excel.getCellStrValue(0, rowi);
-		// rowi++; // ignore the first row , Head title
-		// cellStr = excel.getCellStrValue(0, rowi);
-		// if (cellStr.contains(DataConsts.NODELLAG)) {
-		// rowi++; // the first row is notes
-		// }
-		// rowi++; // ignore the second row , the row is title...
 		dowRows(rowi);
 		return bTestResult;
 	}
@@ -117,9 +112,6 @@ public class ActionFixture extends ActionAdapter {
 			} catch (RuntimeException e) {
 				log.error(e);
 				log.error("please check the element key name in DB!");
-				// if does not check, then test result is false, otherwise
-				// test
-				// result depends on result of check
 				if (!hasChecked || (hasChecked && !bTestResult)) {
 					CustomAssert
 							.exception(new RuntimeException(
@@ -156,9 +148,11 @@ public class ActionFixture extends ActionAdapter {
 					log.error("URL IS NULL");
 					page.close();
 				}
-				open(element);
+				log.debug("open element");
+				page.open(element);
 			} else if (action.equalsIgnoreCase(Actions.INPUT_ACTION)) {
-				input(element, getVarValue(value));
+				log.debug("input element");
+				page.input(element, getVarValue(value));
 			} else if (action.equalsIgnoreCase(Actions.CLICK_ACTION)) {
 				String temp = getVarValue(element);
 				if ("".equals(temp)) {
@@ -169,12 +163,19 @@ public class ActionFixture extends ActionAdapter {
 					page.close();
 					System.exit(-1);
 				}
-				click(temp);
+				log.debug("click element");
+				try{
+					page.click(temp);
+					log.debug("after click element");
+				}catch(Exception e){
+					log.error(e);
+				}
 			} else if (action.equalsIgnoreCase(Actions.DOUBLECLICK_ACTION)) {
-				doubleClick(element);
+				log.debug("doubleClick element");
+				page.doubleClick(element);
 				page.sleep(SuiteData.sleepTime);
 			} else if (action.equalsIgnoreCase(Actions.MOVEON_ELEMENT)) {
-				moveOn(element);
+				page.moveOn(element);
 			} else if (action.equalsIgnoreCase(Actions.SCREEN_WINDOWS)) {
 				page.screenShot(element);
 			} else if (action.equalsIgnoreCase(Actions.SWITCH_WINDOWS)) {
@@ -200,13 +201,12 @@ public class ActionFixture extends ActionAdapter {
 				String temp = getVarValue(value);
 				log.debug("the expected is :" + temp);
 				page.screenShot("check " + value);
-				if (!"".equals(temp)) {
-					bTestResult = check(element, temp);
-					log.debug("test result is: " + bTestResult);
-					hasChecked = true;
-				}
-			} else if (action.equalsIgnoreCase(Actions.SLEEP_TIME)) {
-				int time = 1;
+				log.debug("check element");
+				bTestResult = page.check(element, temp);
+				log.debug("test result is: " + bTestResult);
+				hasChecked = true;
+			} else if (action.equalsIgnoreCase(Actions.SLEEP_ACTION)) {
+				int time = 2;
 				if (value != null && !"".equals(element)) {
 					time = Integer.parseInt(element);
 				}

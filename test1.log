@@ -1,0 +1,123 @@
+Buildfile: D:\workspace\WebAutomationTest\build.xml
+
+init:
+     [echo] delete log file
+     [echo] delete test output
+   [delete] Deleting directory D:\workspace\WebAutomationTest\test-output
+     [echo] delete class file
+   [delete] Deleting directory D:\workspace\WebAutomationTest\classes
+     [echo] clear mailzip
+    [mkdir] Created dir: D:\workspace\WebAutomationTest\classes
+
+compile:
+     [echo] compile tests
+    [javac] Compiling 107 source files to D:\workspace\WebAutomationTest\classes
+    [javac] 注: D:\workspace\WebAutomationTest\src\com\test\basetest\Global.java使用或覆盖了已过时的 API。
+    [javac] 注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+    [javac] 注: 某些输入文件使用了未经检查或不安全的操作。
+    [javac] 注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+     [copy] Copying 1 file to D:\workspace\WebAutomationTest\classes
+
+run_tests:
+     [echo] running tests
+   [testng] ...
+   [testng] ... TestNG 6.8.6beta_20130517_2142 by Cédric Beust (cedric@beust.com)
+   [testng] ...
+   [testng] 
+   [testng] [TestNG] Running:
+   [testng]   D:\workspace\WebAutomationTest\conf\smoke-test.xml
+   [testng] 
+   [testng] [ThreadUtil] Starting executor timeOut:2147483647ms workers:1 threadPoolSize:1
+   [testng] 2017-02-24 15:57:29 [] [com.broada.spring.Browser]-[INFO] 当前操作系统：Windows 7
+   [testng] Starting ChromeDriver 2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9) on port 21346
+   [testng] Only local connections are allowed.
+   [testng] 2017-02-24 15:57:33 [] [com.broada.spring.Browser]-[INFO] 浏览器Chrome启动......
+   [testng] 2017-02-24 15:57:33 [] [com.broada.spring.Browser]-[INFO] 当前执行浏览器： Chrome ,版本：56.0.2924.87
+   [testng] CHROME
+   [testng] 12017-02-24 15:57:34 [] [com.broada.spring.Browser]-[INFO] 加载数据库表page.totalelement完成!
+   [testng] 2017-02-24 15:57:34 [] [com.broada.spring.Browser]-[INFO] 加载数据库表page.firstpage完成!
+   [testng] 2017-02-24 15:57:42 [] [com.broada.spring.Browser]-[INFO] 加载页面[http://www.moojnn.com]
+   [testng] 2017-02-24 15:57:42 [] [com.broada.spring.Browser]-[INFO] 点击[]
+   [testng] 2017-02-24 15:57:44 [] [com.broada.spring.Browser]-[INFO] 页面加载等待2秒
+   [testng] 2017-02-24 15:57:45 [] [com.broada.spring.Browser]-[INFO] 点击[]
+   [testng] 2017-02-24 15:57:45 [] [com.test.basetest.check.BaseCheck]-[ERROR] 文本不存在[数据源]:false
+   [testng] 2017-02-24 15:58:05 [] [com.broada.spring.Browser]-[INFO] 页面加载等待20秒
+   [testng] 2017-02-24 15:58:09 [] [com.broada.spring.Browser]-[INFO] 加载页面[http://www.moojnn.com]
+   [testng] 2017-02-24 15:58:39 [] [com.broada.spring.Browser]-[ERROR] 当前元素在30秒里不能识别
+   [testng] 2017-02-24 15:58:39 [] [com.broada.spring.Browser]-[ERROR] 请查看抓图文件: png\2017-02-24-15-58-39当前元素在30秒里不能识别.png
+   [testng] 2017-02-24 15:58:40 [] [com.broada.spring.Browser]-[ERROR] 点击元素失败
+   [testng] 2017-02-24 15:58:40 [] [com.test.basetest.BaseTest]-[ERROR] method name:test
+   [testng] 2017-02-24 15:58:40 [] [com.test.basetest.BaseTest]-[ERROR] java.lang.reflect.InvocationTargetException
+   [testng] 2017-02-24 15:59:00 [] [com.broada.spring.Browser]-[INFO] 页面加载等待20秒
+   [testng] 2017-02-24 15:59:03 [] [com.broada.spring.Browser]-[INFO] 浏览器关闭!执行结束!
+   [testng] ********************************************** ^@^
+   [testng] FAILED: testLogin
+   [testng] java.lang.AssertionError: text don't exists 数据源
+   [testng] 	at org.testng.Assert.fail(Assert.java:94)
+   [testng] 	at com.test.basetest.check.CustomAssert.fail(Unknown Source)
+   [testng] 	at com.test.basetest.check.BaseCheck.parseExpected(Unknown Source)
+   [testng] 	at com.test.basetest.HtmlPage.check(Unknown Source)
+   [testng] 	at com.test.testcase.sample.TestTempleteTestCase.test(Unknown Source)
+   [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+   [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+   [testng] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+   [testng] 	at java.lang.reflect.Method.invoke(Method.java:601)
+   [testng] 	at com.test.basetest.BaseTest.invokeMethod(Unknown Source)
+   [testng] 	at com.test.basetest.BaseTest.testMethod(Unknown Source)
+   [testng] 	at com.test.basetest.BaseTest.testMethod(Unknown Source)
+   [testng] 	at com.test.testcase.sample.TestTempleteTestCase.testLogin(Unknown Source)
+   [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+   [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+   [testng] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+   [testng] 	at java.lang.reflect.Method.invoke(Method.java:601)
+   [testng] 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+   [testng] 	at org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:46)
+   [testng] 	at org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:37)
+   [testng] 	at org.testng.internal.MethodInvocationHelper.invokeWithTimeoutWithNoExecutor(MethodInvocationHelper.java:240)
+   [testng] 	at org.testng.internal.MethodInvocationHelper.invokeWithTimeout(MethodInvocationHelper.java:229)
+   [testng] 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:724)
+   [testng] 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+   [testng] 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+   [testng] 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+   [testng] 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+   [testng] 	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+   [testng] 	at org.testng.TestRunner.run(TestRunner.java:617)
+   [testng] 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
+   [testng] 	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
+   [testng] 	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:369)
+   [testng] 	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+   [testng] 	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+   [testng] 	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+   [testng] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+   [testng] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+   [testng] 	at java.lang.Thread.run(Thread.java:722)
+   [testng] 
+   [testng] 
+   [testng] ===============================================
+   [testng]     templete test class
+   [testng]     Tests run: 1, Failures: 1, Skips: 0
+   [testng] ===============================================
+   [testng] 
+   [testng] 
+   [testng] ===============================================
+   [testng] Automation smoke Test
+   [testng] Total tests run: 1, Failures: 1, Skips: 0
+   [testng] ===============================================
+   [testng] 
+   [testng] [TestNG] Time taken by [FailedReporter passed=0 failed=0 skipped=0]: 21 ms
+   [testng] [TestNG] Time taken by org.testng.reporters.EmailableReporter2@30646a81: 12 ms
+   [testng] [TestNG] Time taken by com.test.basetest.CustomXMLReporter@62d56c22: 14 ms
+   [testng] [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@4d1f48f: 8 ms
+   [testng] [TestNG] Time taken by org.testng.reporters.SuiteHTMLReporter@3c4f4458: 24 ms
+   [testng] [TestNG] Time taken by org.testng.reporters.jq.Main@47ad4d5: 64 ms
+   [testng] [TestNG] Time taken by org.testng.reporters.XMLReporter@5249d560: 5 ms
+   [testng] 2017-02-24 15:59:03 [] [org.logicalcobwebs.proxool.mysql]-[INFO] Shutting down 'mysql' pool immediately [Shutdown Hook]
+   [testng] 2017-02-24 15:59:03 [] [org.logicalcobwebs.proxool.PrototyperController]-[INFO] Stopping Prototyper thread
+   [testng] 2017-02-24 15:59:03 [] [org.logicalcobwebs.proxool.HouseKeeperController]-[INFO] Stopping HouseKeeper thread
+   [testng] The tests failed.
+
+transform:
+     [xslt] Processing D:\workspace\WebAutomationTest\test-output\testng-results.xml to D:\workspace\WebAutomationTest\test-output\Report.html
+     [xslt] Loading stylesheet D:\workspace\WebAutomationTest\conf\testng-results.xsl
+     [xslt] D:\workspace\WebAutomationTest\test-output\testng-results.xml:24:42: Fatal Error! Error reported by XML parser Cause: org.xml.sax.SAXParseException; systemId: file:/D:/workspace/WebAutomationTest/test-output/testng-results.xml; lineNumber: 24; columnNumber: 42; Invalid byte 2 of 2-byte UTF-8 sequence.
+     [xslt] Failed to process D:\workspace\WebAutomationTest\test-output\testng-results.xml
