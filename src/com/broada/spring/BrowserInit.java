@@ -69,7 +69,6 @@ final class BrowserInit {
 			g_chromeoptions = new ChromeOptions();
 			g_chromeoptions.addArguments("--test-type");
 			g_chromeoptions.addArguments("--disable-extensions");
-			//g_chromeoptions.addArguments("user-data-dir=" + Global.getHomePath() + "//MJ_LIB//src//utility//option");
 			System.setProperty("webdriver.chrome.driver",
 					"plugin\\driver\\chromedriver.exe");
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();

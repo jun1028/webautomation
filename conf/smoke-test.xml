@@ -2,9 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Automation smoke Test" parallel="tests" thread-count="1" verbose="2"> 
 	<listeners>
-	<listener class-name="com.test.basetest.CustomInvokedMethodListener"></listener>
-	<listener class-name="com.test.basetest.CustomTestListener"></listener>
-	<listener class-name="com.test.basetest.CustomXMLReporter"></listener>
+	<listener class-name="com.test.basetest.testngcustom.CustomInvokedMethodListener"></listener>
+	<listener class-name="com.test.basetest.testngcustom.CustomTestListener"></listener>
+	<listener class-name="com.test.basetest.testngcustom.CustomXMLReporter"></listener>
 	</listeners>
 	
 	<test name ="templete test class"  >

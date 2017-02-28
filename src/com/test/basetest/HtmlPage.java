@@ -37,7 +37,6 @@ public class HtmlPage extends BS2AutoTest implements IActions {
 
 	public HtmlPage(BrowserType bt) {
 		super(bt);
-		System.out.println(bt);
 	}
 	
 	public BrowserType getBrowserType(String bt) {

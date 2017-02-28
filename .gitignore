@@ -11,6 +11,6 @@ hs_err_pid*
 /bin/*
 /log/*
 /test-output/*
-/png/*
+/pngs/*
 *.class
 *.log

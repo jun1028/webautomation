@@ -11,7 +11,7 @@ init:
 
 compile:
      [echo] compile tests
-    [javac] Compiling 108 source files to D:\workspace\WebAutomationTest\classes
+    [javac] Compiling 99 source files to D:\workspace\WebAutomationTest\classes
     [javac] 注: D:\workspace\WebAutomationTest\src\com\test\basetest\Global.java使用或覆盖了已过时的 API。
     [javac] 注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
     [javac] 注: 某些输入文件使用了未经检查或不安全的操作。
@@ -24,173 +24,63 @@ run_tests:
    [testng] ... TestNG 6.8.6beta_20130517_2142 by Cédric Beust (cedric@beust.com)
    [testng] ...
    [testng] 
-   [testng] [TestNG] Running:
-   [testng]   D:\workspace\WebAutomationTest\conf\smoke-test.xml
-   [testng] 
-   [testng] [ThreadUtil] Starting executor timeOut:2147483647ms workers:2 threadPoolSize:1
-   [testng] 2017-02-28 09:59:55 [] [com.broada.spring.Browser]-[INFO] 当前操作系统：Windows 7
-   [testng] Starting ChromeDriver 2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9) on port 23287
-   [testng] Only local connections are allowed.
-   [testng] 2017-02-28 09:59:59 [] [com.broada.spring.Browser]-[INFO] 浏览器Chrome启动......
-   [testng] 2017-02-28 09:59:59 [] [com.broada.spring.Browser]-[INFO] 当前执行浏览器： Chrome ,版本：56.0.2924.87
-   [testng] CHROME
-   [testng] 12017-02-28 10:00:01 [] [com.broada.spring.Browser]-[INFO] 加载数据库表page.totalelement完成!
-   [testng] 2017-02-28 10:00:01 [] [com.broada.spring.Browser]-[INFO] 加载数据库表page.firstpage完成!
-   [testng] 2017-02-28 10:05:01 [] [com.test.basetest.BaseTest]-[ERROR] method name:test
-   [testng] 2017-02-28 10:05:01 [] [com.test.basetest.BaseTest]-[ERROR] java.lang.reflect.InvocationTargetException
-   [testng] [305.089][SEVERE]: Timed out receiving message from renderer: 272.685
-   [testng] [305.104][SEVERE]: Timed out receiving message from renderer: -0.016
-   [testng] 2017-02-28 10:05:21 [] [com.broada.spring.Browser]-[INFO] 页面加载等待20秒
-   [testng] 2017-02-28 10:09:07 [] [com.broada.spring.Browser]-[INFO] 加载页面[http://www.moojnn.com]
-   [testng] 2017-02-28 10:09:07 [] [com.broada.spring.Browser]-[INFO] 点击[]
-   [testng] 2017-02-28 10:09:09 [] [com.broada.spring.Browser]-[INFO] 页面加载等待2秒
-   [testng] 2017-02-28 10:09:21 [] [com.broada.spring.Browser]-[INFO] 点击[]
-   [testng] 2017-02-28 10:09:21 [] [com.test.basetest.check.BaseCheck]-[ERROR] 文本不存在[数据源]:false
-   [testng] 2017-02-28 10:09:41 [] [com.broada.spring.Browser]-[INFO] 页面加载等待20秒
-   [testng] 2017-02-28 10:09:46 [] [com.broada.spring.Browser]-[INFO] 浏览器关闭!执行结束!
-   [testng] ********************************************** ^@^
-   [testng] FAILED: testLogin
-   [testng] java.lang.AssertionError: text don't exists 数据源
-   [testng] 	at org.testng.Assert.fail(Assert.java:94)
-   [testng] 	at com.test.basetest.check.CustomAssert.fail(Unknown Source)
-   [testng] 	at com.test.basetest.check.BaseCheck.parseExpected(Unknown Source)
-   [testng] 	at com.test.basetest.HtmlPage.check(Unknown Source)
-   [testng] 	at com.test.testcase.sample.TempleteTestCase2.test(Unknown Source)
+   [testng] java.io.FileNotFoundException: conf\conf.properties (系统找不到指定的文件。)
+   [testng] 	at java.io.FileInputStream.open(Native Method)
+   [testng] 	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+   [testng] 	at java.io.FileInputStream.<init>(FileInputStream.java:97)
+   [testng] 	at com.test.common.ProperUtil.getProperty(Unknown Source)
+   [testng] 	at com.test.basetest.data.SuiteData.<clinit>(Unknown Source)
+   [testng] 	at com.test.testcase.ActionFixtureFactory.createActionFixture(Unknown Source)
    [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
    [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
    [testng] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
    [testng] 	at java.lang.reflect.Method.invoke(Method.java:601)
-   [testng] 	at com.test.basetest.BaseTest.invokeMethod(Unknown Source)
-   [testng] 	at com.test.basetest.BaseTest.testMethod(Unknown Source)
-   [testng] 	at com.test.basetest.BaseTest.testMethod(Unknown Source)
-   [testng] 	at com.test.testcase.sample.TempleteTestCase2.testLogin(Unknown Source)
+   [testng] 	at org.testng.internal.FactoryMethod.invoke(FactoryMethod.java:81)
+   [testng] 	at org.testng.internal.TestNGClassFinder.<init>(TestNGClassFinder.java:140)
+   [testng] 	at org.testng.TestRunner.initMethods(TestRunner.java:409)
+   [testng] 	at org.testng.TestRunner.init(TestRunner.java:235)
+   [testng] 	at org.testng.TestRunner.init(TestRunner.java:205)
+   [testng] 	at org.testng.TestRunner.<init>(TestRunner.java:153)
+   [testng] 	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:538)
+   [testng] 	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+   [testng] 	at org.testng.SuiteRunner.<init>(SuiteRunner.java:111)
+   [testng] 	at org.testng.TestNG.createSuiteRunner(TestNG.java:1299)
+   [testng] 	at org.testng.TestNG.createSuiteRunners(TestNG.java:1286)
+   [testng] 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+   [testng] 	at org.testng.TestNG.run(TestNG.java:1057)
+   [testng] 	at org.testng.TestNG.privateMain(TestNG.java:1364)
+   [testng] 	at org.testng.TestNG.main(TestNG.java:1333)
+   [testng] org.testng.TestNGException: 
+   [testng] The factory method class com.test.testcase.ActionFixtureFactory.createActionFixture() threw an exception
+   [testng] 	at org.testng.internal.FactoryMethod.invoke(FactoryMethod.java:93)
+   [testng] 	at org.testng.internal.TestNGClassFinder.<init>(TestNGClassFinder.java:140)
+   [testng] 	at org.testng.TestRunner.initMethods(TestRunner.java:409)
+   [testng] 	at org.testng.TestRunner.init(TestRunner.java:235)
+   [testng] 	at org.testng.TestRunner.init(TestRunner.java:205)
+   [testng] 	at org.testng.TestRunner.<init>(TestRunner.java:153)
+   [testng] 	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:538)
+   [testng] 	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+   [testng] 	at org.testng.SuiteRunner.<init>(SuiteRunner.java:111)
+   [testng] 	at org.testng.TestNG.createSuiteRunner(TestNG.java:1299)
+   [testng] 	at org.testng.TestNG.createSuiteRunners(TestNG.java:1286)
+   [testng] 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+   [testng] 	at org.testng.TestNG.run(TestNG.java:1057)
+   [testng] 	at org.testng.TestNG.privateMain(TestNG.java:1364)
+   [testng] 	at org.testng.TestNG.main(TestNG.java:1333)
+   [testng] Caused by: java.lang.reflect.InvocationTargetException
    [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
    [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
    [testng] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
    [testng] 	at java.lang.reflect.Method.invoke(Method.java:601)
-   [testng] 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-   [testng] 	at org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:46)
-   [testng] 	at org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:37)
-   [testng] 	at org.testng.internal.MethodInvocationHelper.invokeWithTimeoutWithNoExecutor(MethodInvocationHelper.java:240)
-   [testng] 	at org.testng.internal.MethodInvocationHelper.invokeWithTimeout(MethodInvocationHelper.java:229)
-   [testng] 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:724)
-   [testng] 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-   [testng] 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-   [testng] 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-   [testng] 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-   [testng] 	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-   [testng] 	at org.testng.TestRunner.run(TestRunner.java:617)
-   [testng] 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-   [testng] 	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-   [testng] 	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:369)
-   [testng] 	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-   [testng] 	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
-   [testng] 	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
-   [testng] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-   [testng] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-   [testng] 	at java.lang.Thread.run(Thread.java:722)
-   [testng] 
-   [testng] 
-   [testng] ===============================================
-   [testng]     templete test class
-   [testng]     Tests run: 1, Failures: 1, Skips: 0
-   [testng] ===============================================
-   [testng] 
-   [testng] 2017-02-28 10:09:47 [] [com.broada.spring.Browser]-[INFO] 当前操作系统：Windows 7
-   [testng] Starting ChromeDriver 2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9) on port 7650
-   [testng] Only local connections are allowed.
-   [testng] 2017-02-28 10:09:49 [] [com.broada.spring.Browser]-[INFO] 浏览器Chrome启动......
-   [testng] 2017-02-28 10:09:49 [] [com.broada.spring.Browser]-[INFO] 当前执行浏览器： Chrome ,版本：56.0.2924.87
-   [testng] CHROME
-   [testng] 2017-02-28 10:09:50 [] [com.broada.spring.Browser]-[INFO] 加载数据库表page.totalelement完成!
-   [testng] 2017-02-28 10:09:50 [] [com.broada.spring.Browser]-[INFO] 加载数据库表page.firstpage完成!
-   [testng] 2017-02-28 10:10:02 [] [com.broada.spring.Browser]-[INFO] 加载页面[http://www.moojnn.com]
-   [testng] 2017-02-28 10:10:02 [] [com.broada.spring.Browser]-[INFO] 点击[]
-   [testng] 2017-02-28 10:10:04 [] [com.broada.spring.Browser]-[INFO] 页面加载等待2秒
-   [testng] 2017-02-28 10:10:05 [] [com.broada.spring.Browser]-[INFO] 点击[]
-   [testng] 2017-02-28 10:10:07 [] [com.broada.spring.Browser]-[INFO] 页面加载等待2秒
-   [testng] 2017-02-28 10:10:08 [] [com.broada.spring.Browser]-[INFO] 页面加载等待1秒
-   [testng] 2017-02-28 10:10:08 [] [com.broada.spring.Browser]-[ERROR] 请查看抓图文件: png\2017-02-28-10-10-08check 数据232323源.png
-   [testng] 2017-02-28 10:10:10 [] [com.test.basetest.check.BaseCheck]-[ERROR] 文本不存在[数据232323源]:false
-   [testng] 2017-02-28 10:10:11 [] [com.broada.spring.Browser]-[INFO] 页面加载等待1秒
-   [testng] 2017-02-28 10:10:11 [] [com.broada.spring.Browser]-[ERROR] 请查看抓图文件: png\2017-02-28-10-10-11check 数据源.png
-   [testng] 2017-02-28 10:10:16 [] [com.broada.spring.Browser]-[INFO] 浏览器关闭!执行结束!
-   [testng] ********************************************** ^@^
-   [testng] FAILED: testAction
-   [testng] java.lang.AssertionError: text don't exists 数据232323源
-   [testng] 	at org.testng.Assert.fail(Assert.java:94)
-   [testng] 	at com.test.basetest.check.CustomAssert.fail(Unknown Source)
-   [testng] 	at com.test.basetest.check.BaseCheck.parseExpected(Unknown Source)
-   [testng] 	at com.test.basetest.HtmlPage.check(Unknown Source)
-   [testng] 	at com.test.fixture.ActionFixture.doCells(Unknown Source)
-   [testng] 	at com.test.fixture.ActionFixture.dowRows(Unknown Source)
-   [testng] 	at com.test.fixture.ActionFixture.doSheet(Unknown Source)
-   [testng] 	at com.test.fixture.ActionFixture.doSheet(Unknown Source)
-   [testng] 	at com.test.testcase.TestActionFixture.test(Unknown Source)
-   [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-   [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-   [testng] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-   [testng] 	at java.lang.reflect.Method.invoke(Method.java:601)
-   [testng] 	at com.test.basetest.BaseTest.invokeMethod(Unknown Source)
-   [testng] 	at com.test.basetest.BaseTest.testMethod(Unknown Source)
-   [testng] 	at com.test.basetest.BaseTest.testMethod(Unknown Source)
-   [testng] 	at com.test.testcase.TestActionFixture.testAction(Unknown Source)
-   [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-   [testng] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-   [testng] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-   [testng] 	at java.lang.reflect.Method.invoke(Method.java:601)
-   [testng] 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-   [testng] 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-   [testng] 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-   [testng] 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-   [testng] 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-   [testng] 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-   [testng] 	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-   [testng] 	at org.testng.TestRunner.run(TestRunner.java:617)
-   [testng] 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:335)
-   [testng] 	at org.testng.SuiteRunner.access$000(SuiteRunner.java:37)
-   [testng] 	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:369)
-   [testng] 	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-   [testng] 	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
-   [testng] 	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
-   [testng] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
-   [testng] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
-   [testng] 	at java.lang.Thread.run(Thread.java:722)
-   [testng] 
-   [testng] 
-   [testng] ===============================================
-   [testng]     test fixture 
-   [testng]     Tests run: 1, Failures: 1, Skips: 0
-   [testng] ===============================================
-   [testng] 
-   [testng] 
-   [testng] ===============================================
-   [testng] Automation smoke Test
-   [testng] Total tests run: 2, Failures: 2, Skips: 0
-   [testng] ===============================================
-   [testng] 
-   [testng] [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@5dd70c4b: 15 ms
-   [testng] [TestNG] Time taken by com.test.basetest.CustomXMLReporter@7dad453f: 16 ms
-   [testng] [TestNG] Time taken by org.testng.reporters.XMLReporter@4136b690: 8 ms
-   [testng] [TestNG] Time taken by [FailedReporter passed=0 failed=0 skipped=0]: 12 ms
-   [testng] [TestNG] Time taken by org.testng.reporters.jq.Main@174384ac: 48 ms
-   [testng] [TestNG] Time taken by org.testng.reporters.SuiteHTMLReporter@44a7624e: 24 ms
-   [testng] [TestNG] Time taken by org.testng.reporters.EmailableReporter2@d1131dc: 7 ms
-   [testng] 2017-02-28 10:10:16 [] [org.logicalcobwebs.proxool.mysql]-[INFO] Shutting down 'mysql' pool immediately [Shutdown Hook]
-   [testng] 2017-02-28 10:10:16 [] [org.logicalcobwebs.proxool.PrototyperController]-[INFO] Stopping Prototyper thread
-   [testng] 2017-02-28 10:10:16 [] [org.logicalcobwebs.proxool.HouseKeeperController]-[INFO] Stopping HouseKeeper thread
+   [testng] 	at org.testng.internal.FactoryMethod.invoke(FactoryMethod.java:81)
+   [testng] 	... 14 more
+   [testng] Caused by: java.lang.ExceptionInInitializerError
+   [testng] 	at com.test.testcase.ActionFixtureFactory.createActionFixture(Unknown Source)
+   [testng] 	... 19 more
+   [testng] Caused by: java.lang.NullPointerException
+   [testng] 	at com.test.common.ProperUtil.getProperty(Unknown Source)
+   [testng] 	at com.test.basetest.data.SuiteData.<clinit>(Unknown Source)
+   [testng] 	... 20 more
    [testng] The tests failed.
 
 transform:
-     [xslt] Processing D:\workspace\WebAutomationTest\test-output\testng-results-custom.xml to D:\workspace\WebAutomationTest\test-output\Report.html
-     [xslt] Loading stylesheet D:\workspace\WebAutomationTest\conf\testng-results.xsl
-     [echo] test finish
-
-make_data_zip:
-     [echo] make mail zip
-      [jar] Building jar: D:\workspace\WebAutomationTest\mailzip\report2017-02-28 10-10.zip
-
-sendmail:
-     [echo] send mail
-     [mail] Sending email: web automation Test Results: February 28 2017
-     [mail] Failed to send email: Could not connect to SMTP host: smtp.163.com, port: 465

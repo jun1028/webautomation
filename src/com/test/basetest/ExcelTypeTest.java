@@ -16,7 +16,7 @@ import com.test.common.LogHelper;
 
 public class ExcelTypeTest extends BaseTest {
 
-	private static Log log = LogHelper.getLog(FileTypeTest.class);
+	private static Log log = LogHelper.getLog(ExcelTypeTest.class);
 	protected String shName = null;
 	protected int flag = 0;
 

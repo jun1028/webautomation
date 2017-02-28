@@ -2,7 +2,8 @@ package com.test.basetest.data;
 
 import java.io.File;
 
-import com.test.common.ProperUtil;
+import com.utilhelper.ProperUtil;
+
 
 public class SuiteData {
 	/** retry counts after test fail, default don't retry */

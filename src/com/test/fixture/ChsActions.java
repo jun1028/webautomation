@@ -8,7 +8,7 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 
 import com.test.common.LogHelper;
-import com.test.common.ProperUtil;
+import com.utilhelper.ProperUtil;
 
 public class ChsActions {
 

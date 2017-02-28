@@ -16,8 +16,6 @@ import org.apache.commons.logging.LogFactory;
 /**
  * 本类功能为读取property配置文件
  * 
- * @author wury
- * @version v1.0.0 2012-06-25 修订
  */
 
 public class ProperFile {

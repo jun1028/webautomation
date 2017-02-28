@@ -1,6 +1,5 @@
 package com.test.testcase.sample;
 
-import java.util.Map;
 
 import org.testng.annotations.Test;
 
