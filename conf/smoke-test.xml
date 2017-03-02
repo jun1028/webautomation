@@ -10,7 +10,7 @@
 	<test name ="templete test class"  >
 		<parameter name="table-name-of-page-element"  value="totalelement;firstpage"/>
 		<classes>
-	      <class name="com.test.testcase.sample.TempleteTestCase2"/>   
+	      <class name="com.testcase.TempleteTestCase2"/>   
 	   </classes> 
 	</test >
 	 <!--
@@ -22,15 +22,14 @@
 	   </classes> 
 	</test >
 	-->
-	
 	<test name ="test fixture " >
 		<parameter name="table-name-of-page-element"  value="totalelement;firstpage"/>
 	  	<parameter name="filename"  value="templete.xls"/>
 		<classes>
-	      <class name="com.test.testcase.ActionFixtureFactory"/>   
+	      <class name="com.test.fixture.ActionFixtureFactory"/>   
 	   </classes> 
 	</test >
-
+	
 	<!--
 	<test name="test " prserve-order="true">
 		<parameter name="filename"  value="smoke\\testcaseforclass.xls"/>

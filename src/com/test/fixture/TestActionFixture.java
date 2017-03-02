@@ -1,9 +1,8 @@
-package com.test.testcase;
+package com.test.fixture;
 
 import org.testng.annotations.Test;
 
 import com.test.basetest.ExcelTypeTest;
-import com.test.fixture.ActionFixture;
 
 public class TestActionFixture extends ExcelTypeTest {
 

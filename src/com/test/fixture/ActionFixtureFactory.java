@@ -1,4 +1,4 @@
-package com.test.testcase;
+package com.test.fixture;
 
 import java.io.File;
 import java.util.ArrayList;

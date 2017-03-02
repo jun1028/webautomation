@@ -1,9 +1,7 @@
-package com.test.testcase.sample;
+package com.testcase;
 
 
 import org.testng.annotations.Test;
-
-import com.test.testcase.TempleteTestCase;
 
 public class TestTempleteTestCase extends TempleteTestCase {
 

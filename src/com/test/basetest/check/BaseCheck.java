@@ -69,7 +69,10 @@ public class BaseCheck extends CustomAssert {
 					log.info("ignore check result just make sure the flow!");
 				} else {
 					if (!checkByType(checkType, expected, page)) {
-						fail("text don't exists " + expected);
+						if ("".equals(checkType)){
+							checkType = "text";
+						}
+						fail(checkType + "text don't exists " + expected);
 						bResult = false;
 					}
 				}
@@ -95,10 +98,10 @@ public class BaseCheck extends CustomAssert {
 		return bResult;
 	}
 
-	public static boolean selectData(String checkContent) {
+	public static boolean selectData(String querysql) {
 		boolean bResult = false;
 		DbCheck dbcheck = DbCheck.getInstance();
-		List resultList = dbcheck.selectDataFromTestDB(checkContent);
+		List resultList = dbcheck.selectDataFromTestDB(querysql);
 		if (resultList.size() > 1)
 			bResult = true;
 		return bResult;

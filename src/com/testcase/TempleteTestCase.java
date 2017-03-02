@@ -1,5 +1,4 @@
-package com.test.testcase.sample;
-
+package com.testcase;
 
 import java.lang.reflect.Method;
 
@@ -10,7 +9,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
 import com.test.basetest.BaseTest;
 import com.test.basetest.HtmlPage;
@@ -18,28 +16,37 @@ import com.test.basetest.data.SuiteData;
 import com.test.common.FormatUtil;
 import com.test.common.LogHelper;
 
-public class TempleteTestCase2 extends BaseTest  {
+public abstract class TempleteTestCase extends BaseTest {
 	
-	private static Log log = LogHelper.getLog(TempleteTestCase2.class);
-
-//	@Test(dataProvider = "createMapObj", timeOut = 30000, priority = 1)
-	@Test(timeOut = 30000, priority = 1)
-	public void testLogin() {
-		testMethod("test");
+	private static Log log = LogHelper.getLog(TempleteTestCase.class);
+	
+	@DataProvider
+	public Object[][] createMapObj(Method m) {
+		Object[][] obj = null;
+		String mName = m.getName(); // get method name
+		log.debug("the method name is: " + mName);
+		if (paramData != null) {
+			/** get parameter data by method name */
+			try {
+				mName = FormatUtil.formatShName(mName);
+				obj = paramData.getParamDataByKey(mName);
+			} catch (Exception e) {
+				errMessage.append(e.getMessage());
+			}
+		}
+//		if (obj == null) {
+//			errMessage.append("dataprovider create parameter fail \n");
+//			errMessage
+//					.append("please make sure  the method name is same with sheet name of parameter\n");
+//			errMessage.append("the method name " + mName);
+//			errMessage.append(" system wiil exit");
+//			log.error(errMessage);
+//			System.exit(0);
+//		}
+		return obj;
 	}
 	
-	public boolean test() {
-		boolean bResult = true;
-		page.openUrl("http://www.moojnn.com");
-		page.click("登录注册按钮");
-		page.sleep(2);
-		page.input("用户名输入框", "18521384218");
-		page.input("密码输入框","123456");
-		page.click("登录按钮");
-//		bResult = page.check("TEXT", "数据源");
-		return bResult;
-	}
-	
+	//@Optional("testcase.xls") String fName,
 	@Parameters( {"table-name-of-page-element" })
 	@BeforeTest
 	public void beforeTest(@Optional("totalelement;firstpage") String tbNameOfPageEl) {
@@ -65,20 +72,4 @@ public class TempleteTestCase2 extends BaseTest  {
 			page.close();
 	}
 
-	@DataProvider
-	public Object[][] createMapObj(Method m) {
-		Object[][] obj = null;
-		String mName = m.getName(); // get method name
-		log.debug("the method name is: " + mName);
-		if (paramData != null) {
-			/** get parameter data by method name */
-			try {
-				mName = FormatUtil.formatShName(mName);
-				obj = paramData.getParamDataByKey(mName);
-			} catch (Exception e) {
-				errMessage.append(e.getMessage());
-			}
-		}
-		return obj;
-	}
 }
