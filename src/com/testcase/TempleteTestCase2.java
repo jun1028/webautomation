@@ -4,6 +4,7 @@ package com.testcase;
 import java.lang.reflect.Method;
 
 import org.apache.commons.logging.Log;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -32,12 +33,12 @@ public class TempleteTestCase2 extends BaseTest  {
 		boolean bResult = true;
 		page.openUrl("http://www.moojnn.com");
 		page.click("登录注册按钮");
-		page.sleep(2);
 		page.input("用户名输入框", "18521384218");
 		page.input("密码输入框","123456");
 		page.click("登录按钮");
-		page.click(page.findElementByXpath("//div[@class=\"projectName\"]"));
-//		bResult = page.check("TEXT", "数据源");
+//		page.sleep(5);
+//		WebElement el = page.findElementByXpath("//div[@class=\"itemIcon ng-scope\"]");
+		page.click("我的应用");
 		return bResult;
 	}
 	

@@ -1,4 +1,4 @@
-package com.broada.spring.data;
+package com.test.basetest.data;
 
 import java.io.File;
 
@@ -9,7 +9,7 @@ import com.utilhelper.ProperUtil;
  * Definition for getting message string from properties
  * 
  */
-public class Messages {
+public class Conf {
 	
 	private static ProperUtil p = new ProperUtil("conf" + File.separator
 			+ "conf.properties");

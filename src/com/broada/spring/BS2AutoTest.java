@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.broada.spring.condition.ExceptFrame;
 import com.broada.spring.data.ElementData;
-import com.broada.spring.data.Messages;
+import com.conf.Messages;
 
 public class BS2AutoTest extends MouceAction {
 

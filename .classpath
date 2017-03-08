@@ -4,7 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="plugin/selenium-server.jar"/>
 	<classpathentry kind="lib" path="plugin/jxl.jar"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="plugin/activation.jar"/>
 	<classpathentry kind="lib" path="plugin/ant-jmeter-1.0.9.jar"/>
 	<classpathentry kind="lib" path="plugin/apache-ant-1.8.2.jar"/>
@@ -40,5 +39,6 @@
 	<classpathentry kind="lib" path="plugin/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="lib" path="plugin/gson-2.3.1.jar"/>
 	<classpathentry kind="lib" path="plugin/selenium-java-2.37.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

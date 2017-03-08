@@ -23,9 +23,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.broada.spring.cmd.CWinTasklist;
 import com.broada.spring.condition.ExceptWindow;
 import com.broada.spring.data.ElementData;
-import com.broada.spring.data.Messages;
 import com.broada.spring.utils.SilencerProperties;
 import com.broada.spring.utils.Utils;
+import com.conf.Messages;
 
 /**
  * Browser

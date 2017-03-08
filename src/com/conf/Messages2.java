@@ -1,4 +1,4 @@
-package com.broada.spring.data;
+package com.conf;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ResourceBundle;

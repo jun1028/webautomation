@@ -46,7 +46,6 @@ public class DbProxoolUtilTestDB {
 	/**
 	 * 执行sql删除语句
 	 * 
-	 * @since 2013.06.25
 	 * @param sql
 	 *            语句
 	 * @return int 成功:返回删除的记录数目;失败:-1
@@ -73,7 +72,6 @@ public class DbProxoolUtilTestDB {
 	/**
 	 * 执行sql插入语句
 	 * 
-	 * @since 2013.06.25
 	 * @param sql
 	 *            语句 sql
 	 * @return int 成功:返回插入的记录数目;失败:-1
@@ -100,7 +98,6 @@ public class DbProxoolUtilTestDB {
 	/**
 	 * 批量执行sql插入语句
 	 * 
-	 * @since 2013.06.25
 	 * @param sqlList
 	 *            语句集 sqlList
 	 * @return int 成功:返回插入的记录数目;失败:-1。一条插入失败所有都失败
@@ -136,7 +133,6 @@ public class DbProxoolUtilTestDB {
 	/**
 	 * 执行sql查询语句
 	 * 
-	 * @since 2013.06.25
 	 * @param sql
 	 *            语句
 	 * @param returnType
@@ -193,7 +189,6 @@ public class DbProxoolUtilTestDB {
 	/**
 	 * 执行sql查询语句
 	 * 
-	 * @since 2013.06.25
 	 * @param sql
 	 *            语句 sql
 	 * @param returnType

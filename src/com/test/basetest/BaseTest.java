@@ -20,17 +20,13 @@ import com.test.common.LogHelper;
  * parameter to achieve test multiple test case. the parameter in sheet of excel
  * map a test method name by sheet name
  * 
- * @author Administrator
+ * @author water
  * 
  */
 public class BaseTest extends ElementData implements ITest {
 
 	private static Log log = LogHelper.getLog(BaseTest.class);
-	/**
-	 * Whether or not expect exception, if yes, set bExpdException = true in
-	 * configurion of test.xml file
-	 */
-	protected boolean bExpdException = false;
+
 	protected StringBuffer errMessage = new StringBuffer();
 	protected String curParamShName = "";
 	protected int curRetryies = 0;
@@ -40,9 +36,9 @@ public class BaseTest extends ElementData implements ITest {
 	 * the key of the map is method name ,the value is parameter sheet name in
 	 * excel file!
 	 */
-	public static HtmlPage page = null;
+	public HtmlPage page = null;
 	/** test case parameter */
-	public static IParamData paramData = null;
+	public IParamData paramData = null;
 
 	public String tbNameOfPageEl = "";
 
@@ -95,10 +91,6 @@ public class BaseTest extends ElementData implements ITest {
 	}
 
 	public void initLogin() {
-		Map map = new HashMap();
-		map.put("username", "15995453940");
-		map.put("password", "111111");
-		intitLogin(map);
 	}
 
 	public void intitLogin(Map map) {

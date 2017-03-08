@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.broada.spring.condition.ExceptElement;
 import com.broada.spring.data.ElementData;
-import com.broada.spring.data.Messages;
+import com.conf.Messages;
 
 public class Element extends Browser {
 

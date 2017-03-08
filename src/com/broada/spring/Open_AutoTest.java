@@ -5,7 +5,7 @@ import java.io.File;
 import org.openqa.selenium.WebElement;
 
 import com.broada.spring.data.InputData;
-import com.broada.spring.data.Messages;
+import com.conf.Messages;
 
 /**
  * 轻量级自动化测试简单封装。 本方法的方法数据，均来自于Selenium-WebDriver

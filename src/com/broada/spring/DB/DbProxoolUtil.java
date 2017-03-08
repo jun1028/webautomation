@@ -20,7 +20,6 @@ public class DbProxoolUtil {
 	/**
 	 * 执行sql更新语句
 	 * 
-	 * @since 2013.06.25
 	 * @param sql
 	 *            语句 sql
 	 * @return int 成功:返回更新的记录数目;失败:-1

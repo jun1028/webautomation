@@ -43,51 +43,25 @@ public class BaseCheck extends CustomAssert {
 	public static boolean parseExpected(String checkType, String expected,
 			HtmlPage page) {
 		boolean bResult = true; // default value, just go through, test pass
-		String checkContent = "";
-		if (!"".equals(expected) && expected != null) {
-			if (expected.contains("select")) { // select statement , query data
-				// from database
-				if (expected.contains("select:")) {
-					checkContent = expected.substring(expected
-							.indexOf("select:")
-							+ "select:".length());
-				}
-				bResult = selectData(checkContent);
-			} else {
-				if (expected.contains("check")) {
-					String temp = "cehck";
-					if (expected.contains("check:")) {
-						temp = "check:";
-					}
-					checkContent = expected.substring(expected.indexOf(temp)
-							+ temp.length());
-					if (!checkByType(checkType, expected, page)) {
-						fail("text don't exists " + expected);
-						bResult = false;
-					}
-				} else if (expected.contains("pass")) {
-					log.info("ignore check result just make sure the flow!");
-				} else {
-					if (!checkByType(checkType, expected, page)) {
-						if ("".equals(checkType)){
-							checkType = "text";
-						}
-						fail(checkType + "text don't exists " + expected);
-						bResult = false;
-					}
-				}
+		if ("".equals(checkType)){//default text check type
+			checkType = "text";
+		}
+		if (expected != null && !"".equals(expected)) {
+			if (!checkByType(checkType, expected, page)) {
+				fail(checkType + " check fail, the  expected is " + expected);
+				bResult = false;
+			} else{
+				log.info("check successfull");
 			}
-
 		} else {
-			fail("expected result column is null!");
 			log.info("expected result column is null!");
 		}
 		return bResult;
 	}
-
+	
 	public static boolean checkByType(String checkType, String expected,
 			HtmlPage page) {
-		boolean bResult = false;
+		boolean bResult = true;
 		if ("element".equalsIgnoreCase(checkType)) {
 			bResult = elementContains(expected, page);
 		} else if ("url".equalsIgnoreCase(checkType)) {
@@ -108,33 +82,21 @@ public class BaseCheck extends CustomAssert {
 	}
 
 	private static boolean elementContains(String elements, HtmlPage page) {
-		boolean elementExits = false;
-		String[] elementArray = elements.split("\\|");
-		for (String e : elementArray) {
-			List resultlist1 = DbProxoolUtilTestDB
-					.query("select *  from test.firstpage a where a.checkkey ="
-							+ e, 1);
-
-			for (Object hm : resultlist1) {
-				String key = (String) ((HashMap) hm).get("KEY");
-				elementExits = page.elementExists(key);
-				if (elementExits == false) {
-					log.error("[" + key + "]元素存在:" + elementExits);
-					return elementExits;
-				}
-			}
+		boolean exist = page.elementExists(elements);
+		if (!exist) {
+			log.error("[" + elements + "]元素不存在:");
 		}
-		return elementExits;
+		return exist;
 	}
 
 	private static boolean textsContains(String texts, HtmlPage page) {
 		boolean result = false;
-		String[] textsArray = texts.split("\\|");
-		for (String text : textsArray) {
+		String[] textArray = texts.split("\\|");
+		for (String text : textArray) {
 			try {
-				boolean textExits = page.isTextPresent2(text);
-				if (textExits == false) {
-					log.error("文本不存在[" + text + "]:" + textExits);
+				boolean exist = page.isTextPresent2(text);
+				if (exist == false) {
+					log.error("文本不存在[" + text + "]:");
 					result = false;
 					break;
 				} else

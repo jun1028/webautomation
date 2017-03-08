@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.broada.spring.data.ElementData;
-import com.broada.spring.data.Messages;
+import com.conf.Messages;
 
 public class MouceAction extends Element {
 	public MouceAction() {
